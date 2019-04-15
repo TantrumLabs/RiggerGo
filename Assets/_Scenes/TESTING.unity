@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OilRig
       objectReference: {fileID: 0}
+    - target: {fileID: 100518, guid: bdac51b05f79c5c44b5b087a2e2c0118, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100458, guid: bdac51b05f79c5c44b5b087a2e2c0118, type: 3}
       propertyPath: m_IsActive
       value: 0
