@@ -7,7 +7,7 @@ public class HazardObject : InteractableObject
     public float m_scoreValue;
     
     public new void Start(){
-        offInteract += AppendName;
+        //offInteract += AppendName;
         base.Start();
     }
 
