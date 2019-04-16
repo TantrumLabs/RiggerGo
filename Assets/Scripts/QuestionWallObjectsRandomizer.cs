@@ -6,6 +6,10 @@ public class QuestionWallObjectsRandomizer : MonoBehaviour
 {
     public List<GameObject> m_answers = new List<GameObject>();
     
+    void Start(){
+        RearrangeAnswers();
+    }
+
     [ContextMenu("Rearrange Models")]
     public void RearrangeAnswers(){
         var tempList = new List<GameObject>();
