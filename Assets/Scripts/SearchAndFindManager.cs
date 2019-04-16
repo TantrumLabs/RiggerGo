@@ -11,11 +11,11 @@ public class SearchAndFindManager : MonoBehaviour
     [ContextMenu("Highlight Missed Hazards")]
     public void HighlightHazards(){
         foreach(GameObject go in m_hazards){
-            var goodOn = go.transform.FindChild("Good").gameObject;
+            var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)
                 continue;
             
-            var highLight = go.transform.FindChild("Notice Me");
+            var highLight = go.transform.Find("Notice Me");
 
             if(highLight == null)
                 continue;
@@ -27,7 +27,7 @@ public class SearchAndFindManager : MonoBehaviour
     [ContextMenu("Check Empty")]
     public void OnEmpty(){
         foreach(GameObject go in m_hazards){
-            var goodOn = go.transform.FindChild("Good").gameObject;
+            var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)
                 continue;
             else{
