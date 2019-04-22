@@ -32,28 +32,13 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     // ---------- ---------- ---------- ---------- ----------
     void Update()
     {
-        #region original lazer
-        //if (m_controllerConnected)
-        //{
-        //    if (CheckObjectHit())
-        //    {
-        //        if (CheckForInteractableObject(m_targetObject))
-        //        {
-        //            if (CheckInput())
-        //            {
-        //                OnObjectInteract();
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        //UpdateLaser();
-        #endregion
-
-
         if (m_controllerConnected)
         {
+            if(CheckInput())
+            {
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("lasertriggeron");
+            }
+
             if (CheckLongInput())   // We are holding down the trigger
             {
                 m_timeOut+= Time.deltaTime;
@@ -66,6 +51,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 {
                     OnObjectInteract();
                 }
+            }
+
+            else if (CheckOffInput())
+            {
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("lasertriggeroff");
             }
 
             else
@@ -88,14 +78,19 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             {
                 if (m_targetObject != null)
                 {
+                    Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
+
                     Mouledoux.Components.Mediator.instance.NotifySubscribers
-                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                        (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
                 }
                 
                 m_targetObject = m_raycast.transform.gameObject;
 
+                
+                Mouledoux.Components.Mediator.instance.NotifySubscribers("onhighlight");
+
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
-                    (m_targetObject.GetInstanceID().ToString() + "->onhighlight", new Mouledoux.Callback.Packet());
+                    (m_targetObject.GetInstanceID().ToString() + "->onhighlight");
             }
 
             m_endLinePos = m_raycast.point;
@@ -104,8 +99,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         else if (m_targetObject != null)
         {
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
+
             Mouledoux.Components.Mediator.instance.NotifySubscribers
-                (m_targetObject.GetInstanceID().ToString() + "->offhighlight", new Mouledoux.Callback.Packet());
+                (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
 
             m_targetObject = null;
         }
@@ -154,8 +151,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         InteractableObject io = m_targetObject.GetComponent<InteractableObject>();
 
+        
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("oninteract");
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_targetObject.GetInstanceID().ToString() + "->oninteract", new Mouledoux.Callback.Packet());
+            (m_targetObject.GetInstanceID().ToString() + "->oninteract");
 
         if (io.m_interactionType == InteractableObject.InteractionType.PICKUP && !io.m_lockedInPlace)
         {
@@ -216,8 +216,11 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             yield return null;
         }
 
+        
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.gameObject.GetInstanceID().ToString() + "->offinteract");
 
         go.transform.parent = m_raycast.transform;
         go.transform.position = m_raycast.point;
@@ -229,7 +232,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         if (!hasTriggered)
         {
-            Mouledoux.Components.Mediator.instance.NotifySubscribers("trigger", new Mouledoux.Callback.Packet());
+            Mouledoux.Components.Mediator.instance.NotifySubscribers("trigger");
             hasTriggered = true;
         }
     }
@@ -240,11 +243,14 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         yield return new WaitWhile(() => (CheckLongInput()));
 
-        Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
 
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.GetInstanceID().ToString() + "->offinteract");
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers
+            (m_raycast.transform.gameObject.GetInstanceID().ToString() + "->offinteract");
     }
 
 
@@ -253,8 +259,10 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         yield return new WaitWhile(() => (CheckInput()));
 
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("offinteract");
+            
         Mouledoux.Components.Mediator.instance.NotifySubscribers
-            (go.GetInstanceID().ToString() + "->offinteract", new Mouledoux.Callback.Packet());
+            (go.GetInstanceID().ToString() + "->offinteract");
     }
 
 
