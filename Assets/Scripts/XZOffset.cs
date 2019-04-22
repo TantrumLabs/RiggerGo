@@ -12,7 +12,7 @@ public class XZOffset : MonoBehaviour
         newPos.x = m_Target.transform.localPosition.x;
         newPos.z = m_Target.transform.localPosition.z;
   
-        newPos += m_Target.transform.forward * 1.1f;
+        newPos += Vector3.forward * 1.1f;
 
         newPos.y = 0.05f;
 

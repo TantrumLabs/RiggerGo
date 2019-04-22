@@ -10,8 +10,11 @@ public class TutorialCanvas : MonoBehaviour
     [Multiline]
     public string m_triggerText, m_hoverText, m_releaseText, m_completeText;
 
+    public UnityEngine.Events.UnityEvent onComplete;
+
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
     private Mouledoux.Callback.Callback onTrigger, offTrigger, onHover, offHover, onRelease;
+
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class TutorialCanvas : MonoBehaviour
         onRelease   = ((Mouledoux.Callback.Packet p) => {
             SetText(m_completeText);
             m_subscriptions.UnsubscribeAll();
+            onComplete.Invoke();
         });
         
         m_subscriptions.Subscribe("lasertriggeron", onTrigger   );
@@ -32,6 +36,7 @@ public class TutorialCanvas : MonoBehaviour
         m_subscriptions.Subscribe("offinteract", onRelease      );
 
         SetText(m_triggerText);
+        //onComplete.AddListener(delegate{gameObject.SetActive(false);});
     }
 
     void Update()

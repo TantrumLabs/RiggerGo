@@ -29,7 +29,7 @@ public class FollowObject : MonoBehaviour
     {
         if(m_target != null)
         {
-            transform.position = m_target.position + m_positionOffset;
+            transform.position = m_target.position + m_target.InverseTransformDirection(m_positionOffset);
         }
     }
 }
