@@ -17,7 +17,7 @@ public class ForceTeleport : MonoBehaviour
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
     new Mouledoux.Components.Mediator.Subscriptions();
 
-    Mouledoux.Callback.Callback nextRailHandeler = null;
+    Mouledoux.Callback.Callback nextRailHandler = null;
 
     // ---------- ---------- ---------- ---------- ---------- 
     private void Start()
@@ -29,8 +29,8 @@ public class ForceTeleport : MonoBehaviour
         originalPos = objectRef.transform.localPosition;
         originalRot = objectRef.transform.localRotation;
 
-        nextRailHandeler += NextRailPoint;
-        m_subscriptions.Subscribe("MoveToNextRailPoint", nextRailHandeler);
+        nextRailHandler += NextRailPoint;
+        m_subscriptions.Subscribe("MoveToNextRailPoint", nextRailHandler);
     }
 
 
