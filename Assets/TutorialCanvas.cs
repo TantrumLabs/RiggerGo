@@ -41,7 +41,7 @@ public class TutorialCanvas : MonoBehaviour
 
     void Update()
     {
-        
+    
     }
 
     public void SetText(string aNewText)
