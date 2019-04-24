@@ -19,6 +19,36 @@ LookAtConstraint:
   m_Sources:
   - sourceTransform: {fileID: 7112873599321385711}
     weight: 1
+--- !u!114 &2625832855553207115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2847432274437719416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ef7884dbf8379478974070197219a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_subscriptionEvents:
+  - m_subMessage: MoveToNextRailPoint
+    m_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2847432274437719416}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1001 &8813774265442560115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,16 +116,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
-        type: 3}
-      propertyPath: m_Name
-      value: TutorialCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -114,22 +134,32 @@ PrefabInstance:
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9848078
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17364825
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1794350361022112641, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
@@ -146,6 +176,41 @@ PrefabInstance:
       propertyPath: m_positionOffset.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2625832855553207115}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BroadcastMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MoveToNextRailPoint
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 181022718135562494, guid: b107baa7727831f4499666c6668c3439, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b107baa7727831f4499666c6668c3439, type: 3}
@@ -158,6 +223,12 @@ GameObject:
 --- !u!4 &7112873599321385711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1794350360595317404, guid: b107baa7727831f4499666c6668c3439,
+    type: 3}
+  m_PrefabInstance: {fileID: 8813774265442560115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2847432274437719416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6761253713575750923, guid: b107baa7727831f4499666c6668c3439,
     type: 3}
   m_PrefabInstance: {fileID: 8813774265442560115}
   m_PrefabAsset: {fileID: 0}
