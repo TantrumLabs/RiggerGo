@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class QuestionWallRandomizer : MonoBehaviour
 {
+    public bool m_includeFinalAnswer = false;
     public List<GameObject> m_answers = new List<GameObject>();
-
+    
     void Start(){
         RearrangeAnswers();
     }
@@ -17,9 +18,11 @@ public class QuestionWallRandomizer : MonoBehaviour
         foreach(GameObject go in m_answers)
             tempList.Add(go);
 
-        tempList.Remove(tempList[tempList.Count-1]);
+        if(!m_includeFinalAnswer)
+            tempList.Remove(tempList[tempList.Count-1]);
 
-        var positionList = new List<int>{0,1,2};
+        var positionList = (!m_includeFinalAnswer) ? new List<int>{0,1,2} : 
+            new List<int>{0,1,2,3};
 
         foreach(GameObject go in tempList){
             int index = (positionList.Count - 1 > 0)?Random.Range(
@@ -50,6 +53,12 @@ public class QuestionWallRandomizer : MonoBehaviour
                     goRectTransform.anchorMax = new Vector2(1, .35f);
                     goRectTransform.anchorMin = new Vector2(0, .25f);
                     parsedString[0] = "C";
+                    break;
+
+                case 3:
+                    goRectTransform.anchorMax = new Vector2(1, .2f);
+                    goRectTransform.anchorMin = new Vector2(0, .1f);
+                    parsedString[0] = "D";
                     break;
 
                 default:
