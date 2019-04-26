@@ -21,7 +21,6 @@ public class QuestionManager : MonoBehaviour
     }
 
     public void RemoveCurrentQuestion(){
-        Debug.Log("Next Question");
         m_questionGameObjects[0].SetActive(false);
 
         m_questionGameObjects.Remove(m_questionGameObjects[0]);
