@@ -46,7 +46,137 @@ ModelImporter:
     4300000: sub01
     4300002: sub02
     4300004: sub03
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Alu
+    second: {fileID: 2100000, guid: 056758b8f8cf5a94582da0d04972b982, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Antifoul
+    second: {fileID: 2100000, guid: 80d9a6fa105469b479b8c186310d11a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 902a7e4d25ada4e4686ed4cdc3baba3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackF
+    second: {fileID: 2100000, guid: 1c8cd2003b42b0e47a39c62bf9f0ca54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue
+    second: {fileID: 2100000, guid: fb9fcdfcd6c289547b89003364350260, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronze
+    second: {fileID: 2100000, guid: de9a9431dfb768d4eac674dc6eaaa7d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: 46e10115d43e60649a14e3895499ce16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DecallsB
+    second: {fileID: 2100000, guid: 746c550d587048a44bb3eb3fd272a9d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DecallsW
+    second: {fileID: 2100000, guid: d9d4aa04efeb13f4f9782af9ccd5fe40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DecallsY
+    second: {fileID: 2100000, guid: 0d5b8c22175f55849858f1dae73f0330, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlasNavGreen
+    second: {fileID: 2100000, guid: d218a7a180f9ef94185e4a034dfaea9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlasNavRed
+    second: {fileID: 2100000, guid: 8882438ace92d834a819d7fbd5298225, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlasNavWhite
+    second: {fileID: 2100000, guid: 25df58da35a0afe41ac41599d10104da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 73de5bf402fa6a54f8d4faff3b7b596c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: b342565af7a14904dabe5bf3c5ec9c13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreyF
+    second: {fileID: 2100000, guid: 84fb93aed2a51f0498b6421fc017cc09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Inside
+    second: {fileID: 2100000, guid: 6b32694f8a3063347b94efad3ca6c32d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange
+    second: {fileID: 2100000, guid: 582c48629bfccba46bd2a31957177478, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Orange_Plastic
+    second: {fileID: 2100000, guid: 7d023da66859eef4191df8738d0fdce7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outboard
+    second: {fileID: 2100000, guid: fcd90d411eb20d849af1d122f542581b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RVS
+    second: {fileID: 2100000, guid: f2f09e2bc1185c547a73ada5b8bd00b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: c1e8817f2f5e25e4b9b738484ae730bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 726b0b92b30cd214f820148df77aa051, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteF
+    second: {fileID: 2100000, guid: dbf5dfd01156c4c43a382520a7a24b4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 0153f890d2c50be4fafceaf44c6bb224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: 38ed661627c5c024fbefad87b14199d8, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
