@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1235127550958615303
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 170089805274516698}
   - component: {fileID: 8203337792234914439}
   - component: {fileID: 2788044693888396464}
+  - component: {fileID: 4547787821404698596}
   m_Layer: 5
   m_Name: Wrong Answer 2
   m_TagString: Untagged
@@ -425,6 +426,19 @@ MonoBehaviour:
     floats: []
     strings: []
   m_scoreValue: 0
+--- !u!65 &4547787821404698596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488987686818209736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4502544, y: 0.19982588, z: 0.098695874}
+  m_Center: {x: 1.2270021, y: 0.011481464, z: -0.039331853}
 --- !u!1 &1610289585233014406
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +602,7 @@ GameObject:
   - component: {fileID: 7647047537832323401}
   - component: {fileID: 7401935541651821489}
   - component: {fileID: 7376032811086613600}
+  - component: {fileID: 965317736116641463}
   m_Layer: 5
   m_Name: Wrong Answer 3
   m_TagString: Untagged
@@ -794,6 +809,19 @@ MonoBehaviour:
     floats: []
     strings: []
   m_scoreValue: 0
+--- !u!65 &965317736116641463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624494709144868922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4502544, y: 0.19982588, z: 0.098695874}
+  m_Center: {x: 1.2270021, y: 0.011481464, z: -0.039331853}
 --- !u!1 &2682469300375872459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1099,7 @@ GameObject:
   - component: {fileID: 523913689514820655}
   - component: {fileID: 4836897023642707539}
   - component: {fileID: 6932016027930101836}
+  - component: {fileID: 6182457764331099173}
   m_Layer: 5
   m_Name: Wrong Answer 1
   m_TagString: Untagged
@@ -1277,6 +1306,19 @@ MonoBehaviour:
     floats: []
     strings: []
   m_scoreValue: 0
+--- !u!65 &6182457764331099173
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195001959624402122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4502544, y: 0.19982588, z: 0.098695874}
+  m_Center: {x: 1.2270021, y: 0.011481464, z: -0.039331853}
 --- !u!1 &3223113535080535823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7398750563736466463
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,6 +1479,7 @@ GameObject:
   - component: {fileID: 4143445452702969592}
   - component: {fileID: 716583149348129895}
   - component: {fileID: 6455740623310328867}
+  - component: {fileID: 173103751456794912}
   m_Layer: 5
   m_Name: Correct Answer
   m_TagString: Untagged
@@ -1632,6 +1675,19 @@ MonoBehaviour:
     floats: []
     strings: []
   m_scoreValue: 0
+--- !u!65 &173103751456794912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679386004221194877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4502544, y: 0.19982588, z: 0.098695874}
+  m_Center: {x: 1.2270021, y: 0.011481464, z: -0.039331853}
 --- !u!1 &5086775559091540486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a61c2ad95479fe43b377dad03213dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_includeFinalAnswer: 0
   m_answers:
   - {fileID: 4679386004221194877}
   - {fileID: 3195001959624402122}
@@ -2507,7 +2564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7467653285517948243
 Transform:
   m_ObjectHideFlags: 0
@@ -2560,7 +2617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8791040405029831874
 Transform:
   m_ObjectHideFlags: 0
