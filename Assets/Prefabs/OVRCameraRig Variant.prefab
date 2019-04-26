@@ -19,6 +19,36 @@ LookAtConstraint:
   m_Sources:
   - sourceTransform: {fileID: 7112873599321385711}
     weight: 1
+--- !u!114 &3362381252134662152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7112873598646746372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ef7884dbf8379478974070197219a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_subscriptionEvents:
+  - m_subMessage: MoveToNextRailPoint
+    m_event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7112873598646746372}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!114 &2625832855553207115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +86,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 1794350359683444398, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_Name
@@ -151,16 +191,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -0.03
       objectReference: {fileID: 0}
-    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1794350359116322167, guid: b107baa7727831f4499666c6668c3439,
-        type: 3}
-      propertyPath: m_Name
-      value: TutorialCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1794350361022112641, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -199,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_offInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BroadcastMessage
+      value: NotifySubscribers
       objectReference: {fileID: 0}
     - target: {fileID: 9119944997293696080, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
