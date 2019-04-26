@@ -221,6 +221,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7036149289846330590, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762000022398359700, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407650943941878596, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294272207877391223, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2300
+      objectReference: {fileID: 0}
     - target: {fileID: 6514938005204449764, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
@@ -234,7 +254,32 @@ PrefabInstance:
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: 'Q: Which piece of protective equipment is this rigger missing?'
+      value: Which piece of protective equipment is this rigger missing?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 394185489030798537, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}

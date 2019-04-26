@@ -117,6 +117,46 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170985301107862777, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 151428637924866850, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
       propertyPath: m_IsActive
@@ -245,8 +285,38 @@ PrefabInstance:
     - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
       propertyPath: m_Text
-      value: 'Q: Out of the 3 riggers, which rigger is missing all of their safety
-        protective equipment?'
+      value: Out of the 3 riggers, which rigger is missing all of their safety protective
+        equipment?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5861831421808355901, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
