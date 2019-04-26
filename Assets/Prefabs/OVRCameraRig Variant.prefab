@@ -14,7 +14,7 @@ LookAtConstraint:
   m_Roll: 0
   m_WorldUpObject: {fileID: 0}
   m_UseUpObject: 0
-  m_IsContraintActive: 1
+  m_IsContraintActive: 0
   m_IsLocked: 0
   m_Sources:
   - sourceTransform: {fileID: 7112873599321385711}
@@ -164,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1794350359116322163, guid: b107baa7727831f4499666c6668c3439,
         type: 3}
