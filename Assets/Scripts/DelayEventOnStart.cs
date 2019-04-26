@@ -17,15 +17,15 @@ public class DelayEventOnStart : MonoBehaviour
     private void Start()
     {
         if(m_selfDestruct) m_action.AddListener(delegate{Destroy(this);});
-        if(m_onStart) BeginCountDown();
+        if(m_onStart) BeginCountdown();
     }
 
-    public void BeginCountDown()
+    public void BeginCountdown()
     {
-        StartCoroutine(_BeginCountDown());
+        StartCoroutine(_BeginCountdown());
     }
 
-	IEnumerator _BeginCountDown()
+	IEnumerator _BeginCountdown()
     {
 		yield return new WaitForSeconds(m_delay);
         m_action.Invoke();
