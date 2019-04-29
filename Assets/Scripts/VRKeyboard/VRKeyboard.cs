@@ -50,9 +50,9 @@ public class VRKeyboard : MonoBehaviour
         GameObject newKey;
         for(int i = 0; i < qwerty.Length; i++)
         {
-            newKey = Instantiate<GameObject>(KeyPrefab, transform.position + transform.right * -(i%10), Quaternion.identity);
+            newKey = Instantiate<GameObject>(KeyPrefab, (transform.position + transform.right * 4.5f) + transform.right * -(i%10), Quaternion.identity);
             newKey.transform.parent = transform;
-            newKey.transform.Translate(Vector3.down * (i/10));
+            newKey.transform.Translate((Vector3.up * 1.5f) + Vector3.down * (i/10));
 
             m_keys.Add(newKey.GetComponent<VRKeyboardKey>());
             m_keys[i].Initialize(m_keyboardID, qwerty[i].ToString(), qwertySHIFT[i].ToString());

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRKeyboardKey : MonoBehaviour
+public class VRKeyboardKey : InteractableObject
 {
+    [SerializeField]
     private string m_keyboardID;
 
     [SerializeField] private string m_mainKey;
@@ -33,17 +34,36 @@ public class VRKeyboardKey : MonoBehaviour
         m_shiftKey = a_shiftString == "" ? m_mainKey.ToUpper() : a_shiftString;
         isCapsShift = a_capsShift;
 
+        m_onHighnight.RemoveAllListeners();
+        m_offHighnight.RemoveAllListeners();
+        m_onInteract.RemoveAllListeners();
+        m_offInteract.RemoveAllListeners();
+
+        m_onHighnight.AddListener(delegate{SetMaterial(m_highlightMat);});
+        m_offHighnight.AddListener(delegate{SetMaterial(m_normalMat);});
+        m_onInteract.AddListener(delegate{  });
+        m_offInteract.AddListener(delegate{PressKey();});
+
         DefaultKey();
         ResetMaterial();
     }
 
 
-    
+    public new void Start()
+    {
+        base.Start();
+        Initialize(m_keyboardID, m_mainKey);
+    }
+
+    public void PressKey()
+    {
+        Mouledoux.Components.Mediator.instance.NotifySubscribers($"vrkeyboard:{m_keyboardID}", new object[] {this});
+    }
 
 
     public string GetCurrentKey()
     {
-        return m_mainText.text;
+        return isShifted ? GetShiftKey() : GetMainKey();
     }
 
     public string GetMainKey()
@@ -62,7 +82,10 @@ public class VRKeyboardKey : MonoBehaviour
     {
         isShifted = false;
         m_mainText.text = m_mainKey;
-        m_shiftText.text = m_shiftKey;
+
+        if(m_shiftText != null)
+            m_shiftText.text = m_shiftKey;
+
         return 0;
     }
 
@@ -76,7 +99,10 @@ public class VRKeyboardKey : MonoBehaviour
 
         isShifted = true;
         m_mainText.text = m_shiftKey;
-        m_shiftText.text = m_mainKey;
+
+        if(m_shiftText != null)
+            m_shiftText.text = m_mainKey;
+
         return 0;
     }
 
