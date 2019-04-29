@@ -629,6 +629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Dog Everything)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 8da8381386b217f48a2e60cdf2a6d237,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 8da8381386b217f48a2e60cdf2a6d237,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -709,6 +714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Swing Boom)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: d5be5d9904de40745bb63ebe5b8e01f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: d5be5d9904de40745bb63ebe5b8e01f9,
         type: 3}
@@ -871,6 +881,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Lower Boom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: e07ce8f519347ca44aacde82934807c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: e07ce8f519347ca44aacde82934807c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -957,6 +972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Move Slowly)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 1f9a19acb47d19c47ab052887157ad77,
         type: 3}
@@ -1649,6 +1669,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missing Some Equipment(Gloves)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1718,6 +1743,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cbad4c75824fd4e8af3d6e5a1c1b49, type: 3}
@@ -1818,6 +1863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Emergency Stop)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 4d89faf76960a044781ca9316997379f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 4d89faf76960a044781ca9316997379f,
         type: 3}
@@ -2157,6 +2207,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missing All Gear
       objectReference: {fileID: 0}
+    - target: {fileID: 8525404061098668695, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3192974990025452558, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2280,12 +2335,37 @@ PrefabInstance:
     - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0956471
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000131726265
+      value: 0.00002525188
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9014446
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.00007684901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582147637509783621, guid: 463d6048d9c9b624f804063d3e87a6e3,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.10132513
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 463d6048d9c9b624f804063d3e87a6e3, type: 3}
@@ -2300,6 +2380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Raise boom, lower load)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
         type: 3}
@@ -2356,6 +2441,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7e7c55f6ba8414e9c25d41ae877970, type: 3}
 --- !u!4 &736533606 stripped
@@ -2381,6 +2476,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Lower boom, raise load)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: eb7ba9645180d4a48ad796bf83728e5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: eb7ba9645180d4a48ad796bf83728e5a,
         type: 3}
@@ -2463,6 +2563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missing Some Equipment(Eye Protection)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 0b18d4229ff11fa438e95c7c312e5762,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 0b18d4229ff11fa438e95c7c312e5762,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2532,6 +2637,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 0b18d4229ff11fa438e95c7c312e5762,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 0b18d4229ff11fa438e95c7c312e5762,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 0b18d4229ff11fa438e95c7c312e5762,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b18d4229ff11fa438e95c7c312e5762, type: 3}
@@ -2611,6 +2731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Hoist Load)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: cbd7519116dea0448b824603995c01b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: cbd7519116dea0448b824603995c01b4,
         type: 3}
@@ -3182,6 +3307,147 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
     type: 3}
   m_PrefabInstance: {fileID: 1075756358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1086015425
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1786256988}
+    m_Modifications:
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Angle Greastest Tension
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4882634
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1910763
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4533719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1786256989}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2495.6548
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: Which angle from horizontal will produce the greatest tension in a sling
+        leg; a 60 degree angle, a 45 degree angle or a 30 degree angle?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. 30 degrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: B. 60 degrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251380046857251834, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: C. 45 degrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. They're all the same.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
+--- !u!4 &1086015426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1086015425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116278433
 GameObject:
@@ -4653,6 +4919,147 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3fe1c96b732d8d46b5f7c959e099e2e, type: 3}
+--- !u!1001 &1175044431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1786256988}
+    m_Modifications:
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Load Center of Mass
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4882634
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1910763
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4533719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1786256989}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2282.7998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: What can happen if you attach slings to a point below the load's vertical
+        center of mass?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. The load may topple
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: B. You gain a mechanical advantage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251380046857251834, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: C. The load is well balanced
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. The load 'sits down' in the sling bridle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
+--- !u!4 &1175044432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175044431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1183102262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4969,6 +5376,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wearing All Gear
       objectReference: {fileID: 0}
+    - target: {fileID: 8525404061098668695, guid: 4f55277e77f4f8f43b26bd21a49df401,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3192974990025452558, guid: 4f55277e77f4f8f43b26bd21a49df401,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5091,6 +5503,126 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f55277e77f4f8f43b26bd21a49df401, type: 3}
+--- !u!1001 &1405037571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1786256988}
+    m_Modifications:
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Name
+      value: Stable Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419310088256657778, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4882634
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1910763
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4533719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1786256989}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: In the example, which load is the most stable?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. Load 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: B. Load 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251380046857251834, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: C. Load 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. None of these are stable.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
+--- !u!4 &1405037572 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5848671434090252352, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405037571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1409824434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5102,6 +5634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Least Lifting Capacity
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371706867025599803, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -5752,6 +6289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Raise the Boom)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: dc2be158e1cfda345a56666f371f05d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: dc2be158e1cfda345a56666f371f05d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6074,6 +6616,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Lower Load)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 95459a483f9ccbd42b575d9ab2e78193,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 95459a483f9ccbd42b575d9ab2e78193,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6283,6 +6830,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Missing Some Equipment(Ear Protection)
       objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 3066c1946d3632c488fe3d87485ea44b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 3066c1946d3632c488fe3d87485ea44b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6352,6 +6904,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 3066c1946d3632c488fe3d87485ea44b,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 3066c1946d3632c488fe3d87485ea44b,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 3066c1946d3632c488fe3d87485ea44b,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010294083503916937, guid: 3066c1946d3632c488fe3d87485ea44b,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3066c1946d3632c488fe3d87485ea44b, type: 3}
@@ -6540,6 +7112,9 @@ Transform:
   - {fileID: 1535495030}
   - {fileID: 1075756360}
   - {fileID: 1409824435}
+  - {fileID: 1405037572}
+  - {fileID: 1175044432}
+  - {fileID: 1086015426}
   m_Father: {fileID: 1267092266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -6669,6 +7244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Stop)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523426074653557483, guid: 77952bd3dc9eaed40891fcb359f885c6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 77952bd3dc9eaed40891fcb359f885c6,
         type: 3}
