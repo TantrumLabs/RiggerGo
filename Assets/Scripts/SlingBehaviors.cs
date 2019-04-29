@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlingBehaviors : MonoBehaviour
 {
     public Vector3 m_newPosition;
-    public Quaternion m_newRotation;
+    public Vector3 m_newRotation;
 
     public GameObject m_questionGameObject;
 
@@ -19,9 +19,20 @@ public class SlingBehaviors : MonoBehaviour
 
     public void Activate(){
         transform.localPosition = m_newPosition;
-        transform.localRotation = m_newRotation;
+        transform.Rotate(m_newRotation);
 
         m_questionGameObject.SetActive(true);
+        gameObject.GetComponent<HazardObject>().enabled = false;
+        object[] objarray = {this};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+    }
+
+    public void SetBack(){
+        transform.localPosition = m_oldPosition;
+        transform.localRotation = m_oldRotation;
+
+        m_questionGameObject.SetActive(false);
+        gameObject.GetComponent<HazardObject>().enabled = true;
     }
 
     public void Deactivate(){
@@ -30,5 +41,7 @@ public class SlingBehaviors : MonoBehaviour
 
         m_questionGameObject.SetActive(false);
         Destroy(gameObject.GetComponent<HazardObject>());
+        object[] objarray = {null};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
     }
 }

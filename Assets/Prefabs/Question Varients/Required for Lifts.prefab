@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: What protective equipment is required for lifts?
+      value: What Persnonal Protective Equipment is required for lifts?
       objectReference: {fileID: 0}
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -121,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 110
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}

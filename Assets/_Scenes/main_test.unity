@@ -3157,6 +3157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97c9e30a68a75b47994a72619491b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_turnGameobjectsOff: 1
   m_questionGameObjects:
   - {fileID: 2308413164853418084}
   m_onEmpty:
@@ -5197,6 +5198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97c9e30a68a75b47994a72619491b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_turnGameobjectsOff: 1
   m_questionGameObjects:
   - {fileID: 1903578189}
   - {fileID: 119139933}
@@ -5990,6 +5992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97c9e30a68a75b47994a72619491b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_turnGameobjectsOff: 1
   m_questionGameObjects:
   - {fileID: 278132257}
   - {fileID: 778296612}
@@ -6702,6 +6705,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2308413164853418085, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
+        type: 3}
+      propertyPath: m_onEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1118456896}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a, type: 3}
 --- !u!4 &5694819575414248059 stripped
