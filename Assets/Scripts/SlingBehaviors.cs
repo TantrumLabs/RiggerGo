@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlingBehaviors : MonoBehaviour
 {
     public Vector3 m_newPosition;
-    public Quaternion m_newRotation;
+    public Vector3 m_newRotation;
 
     public GameObject m_questionGameObject;
 
@@ -19,7 +19,7 @@ public class SlingBehaviors : MonoBehaviour
 
     public void Activate(){
         transform.localPosition = m_newPosition;
-        transform.localRotation = m_newRotation;
+        transform.Rotate(m_newRotation);
 
         m_questionGameObject.SetActive(true);
     }

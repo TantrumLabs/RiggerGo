@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class QuestionManager : MonoBehaviour
 {
+    public bool m_turnGameobjectsOff = true;
+
     public List<GameObject> m_questionGameObjects =  new List<GameObject>();
 
     public UnityEngine.Events.UnityEvent m_onEmpty;
+
 
     void Start(){
         if(m_questionGameObjects.Count <= 0){
@@ -14,15 +17,18 @@ public class QuestionManager : MonoBehaviour
             return;
         }
 
-        foreach(GameObject go in m_questionGameObjects)
-            go.SetActive(false);
-
-        m_questionGameObjects[0].SetActive(true);
+        if(m_turnGameobjectsOff){
+            foreach(GameObject go in m_questionGameObjects)
+                go.SetActive(false);
+        
+            m_questionGameObjects[0].SetActive(true);
+        }
     }
 
     public void RemoveCurrentQuestion(){
-        m_questionGameObjects[0].SetActive(false);
-
+        if(m_turnGameobjectsOff){
+            m_questionGameObjects[0].SetActive(false);
+        }
         m_questionGameObjects.Remove(m_questionGameObjects[0]);
 
         if(m_questionGameObjects.Count <= 0){
@@ -30,6 +36,8 @@ public class QuestionManager : MonoBehaviour
             return;
         }
 
-        m_questionGameObjects[0].SetActive(true);
+        if(m_turnGameobjectsOff){
+            m_questionGameObjects[0].SetActive(true);
+        }
     }
 }

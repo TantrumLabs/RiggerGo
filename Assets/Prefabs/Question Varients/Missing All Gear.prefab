@@ -285,8 +285,8 @@ PrefabInstance:
     - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
       propertyPath: m_Text
-      value: Out of the 3 riggers, which rigger is missing all of their safety protective
-        equipment?
+      value: Out of the 3 riggers, which rigger is missing all of their Personal Protective
+        Equipment?
       objectReference: {fileID: 0}
     - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 3084762696154787280, guid: e5596928b14723f478589239dfcec8aa,
         type: 3}

@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: Which piece of protective equipment is this rigger missing?
+      value: Which piece of Personal Protective Equipment is this rigger missing?
       objectReference: {fileID: 0}
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -269,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 90
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
