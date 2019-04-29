@@ -29,6 +29,8 @@ public class ForceTeleport : MonoBehaviour
         originalPos = objectRef.transform.localPosition;
         originalRot = objectRef.transform.localRotation;
 
+        TurnOffOtherZones();
+
         nextRailHandler += NextRailPoint;
         m_subscriptions.Subscribe("MoveToNextRailPoint", nextRailHandler);
     }
@@ -160,6 +162,7 @@ public class ForceTeleport : MonoBehaviour
     public void NextRailPoint()
     {
         currentPoint++;
+        TurnOffOtherZones();
         if(currentPoint >= railPoints.Count - 1)
         {
             currentPoint = railPoints.Count - 1;
@@ -177,5 +180,18 @@ public class ForceTeleport : MonoBehaviour
     public void NextRailPoint(Mouledoux.Callback.Packet data)
     {
         NextRailPoint();
+    }
+
+    //THIS FUNCTION IS PROJECT SPECIFIC PLEASE ERASE IF TRANSFERING OVER(Project: Rigger Go)
+    public void TurnOffOtherZones(){
+        for(int i=0; i < railPoints.Count; i++){
+            if(i == currentPoint){
+                railPoints[i].transform.parent.gameObject.SetActive(true);
+                continue;
+            }
+                
+
+            railPoints[i].transform.parent.gameObject.SetActive(false);
+        }
     }
 }
