@@ -629,11 +629,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Dog Everything)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: 8da8381386b217f48a2e60cdf2a6d237,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 8da8381386b217f48a2e60cdf2a6d237,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,6 +684,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 8da8381386b217f48a2e60cdf2a6d237,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da8381386b217f48a2e60cdf2a6d237, type: 3}
 --- !u!4 &278132256 stripped
@@ -714,11 +714,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Swing Boom)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: d5be5d9904de40745bb63ebe5b8e01f9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: d5be5d9904de40745bb63ebe5b8e01f9,
         type: 3}
@@ -775,6 +770,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: d5be5d9904de40745bb63ebe5b8e01f9,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5be5d9904de40745bb63ebe5b8e01f9, type: 3}
 --- !u!4 &305005301 stripped
@@ -881,11 +881,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Lower Boom)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: e07ce8f519347ca44aacde82934807c4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: e07ce8f519347ca44aacde82934807c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,6 +936,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: e07ce8f519347ca44aacde82934807c4,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e07ce8f519347ca44aacde82934807c4, type: 3}
 --- !u!4 &334514094 stripped
@@ -1032,6 +1032,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216961092634371790, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
+    - target: {fileID: 8582113168699866924, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveCurrentQuestion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342380743550985780, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_Text
+      value: 'D. Arm extended, fingers closed, thumb pointing downward '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965781205150093262, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_Text
+      value: C. Raising your hands above your head
+      objectReference: {fileID: 0}
+    - target: {fileID: 510439111711916825, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_Text
+      value: B. Moving your hands together
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428034685549941244, guid: 1f9a19acb47d19c47ab052887157ad77,
+        type: 3}
+      propertyPath: m_Text
+      value: A. Hovering one hand over the other
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9a19acb47d19c47ab052887157ad77, type: 3}
@@ -1864,11 +1904,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Emergency Stop)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: 4d89faf76960a044781ca9316997379f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 4d89faf76960a044781ca9316997379f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1924,6 +1959,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 4d89faf76960a044781ca9316997379f,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d89faf76960a044781ca9316997379f, type: 3}
 --- !u!4 &676747647 stripped
@@ -2381,11 +2421,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Raise boom, lower load)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2441,16 +2476,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3010294083503916937, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
+    - target: {fileID: 8582113168699866924, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
         type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3010294083503916937, guid: 2b7e7c55f6ba8414e9c25d41ae877970,
-        type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b7e7c55f6ba8414e9c25d41ae877970, type: 3}
 --- !u!4 &736533606 stripped
@@ -2476,11 +2506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Signals(Lower boom, raise load)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: eb7ba9645180d4a48ad796bf83728e5a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: eb7ba9645180d4a48ad796bf83728e5a,
         type: 3}
@@ -2537,6 +2562,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: eb7ba9645180d4a48ad796bf83728e5a,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb7ba9645180d4a48ad796bf83728e5a, type: 3}
 --- !u!4 &778296611 stripped
@@ -2732,11 +2762,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Hoist Load)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: cbd7519116dea0448b824603995c01b4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: cbd7519116dea0448b824603995c01b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2792,6 +2817,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: cbd7519116dea0448b824603995c01b4,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd7519116dea0448b824603995c01b4, type: 3}
 --- !u!4 &832405361 stripped
@@ -6289,11 +6319,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Raise the Boom)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: dc2be158e1cfda345a56666f371f05d2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: dc2be158e1cfda345a56666f371f05d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6349,6 +6374,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: dc2be158e1cfda345a56666f371f05d2,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2be158e1cfda345a56666f371f05d2, type: 3}
 --- !u!4 &1689311693 stripped
@@ -6616,11 +6646,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Lower Load)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: 95459a483f9ccbd42b575d9ab2e78193,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 95459a483f9ccbd42b575d9ab2e78193,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6676,6 +6701,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 95459a483f9ccbd42b575d9ab2e78193,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95459a483f9ccbd42b575d9ab2e78193, type: 3}
 --- !u!4 &1726810788 stripped
@@ -6728,6 +6758,7 @@ MonoBehaviour:
   - {fileID: 1304930575}
   - {fileID: 198574824}
   - {fileID: 1682298121}
+  - {fileID: 1123177022}
   currentPoint: 0
 --- !u!4 &1742792311
 Transform:
@@ -7245,11 +7276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Signals(Stop)
       objectReference: {fileID: 0}
-    - target: {fileID: 4523426074653557483, guid: 77952bd3dc9eaed40891fcb359f885c6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1401325170367700001, guid: 77952bd3dc9eaed40891fcb359f885c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7305,6 +7331,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8582113168699866924, guid: 77952bd3dc9eaed40891fcb359f885c6,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764532905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77952bd3dc9eaed40891fcb359f885c6, type: 3}
 --- !u!4 &1888998512 stripped
