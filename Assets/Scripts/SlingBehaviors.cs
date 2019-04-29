@@ -41,5 +41,7 @@ public class SlingBehaviors : MonoBehaviour
 
         m_questionGameObject.SetActive(false);
         Destroy(gameObject.GetComponent<HazardObject>());
+        object[] objarray = {null};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
     }
 }
