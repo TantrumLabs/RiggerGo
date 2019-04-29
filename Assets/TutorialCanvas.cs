@@ -18,12 +18,12 @@ public class TutorialCanvas : MonoBehaviour
 
     void Start()
     {
-        onTrigger   = ((Mouledoux.Callback.Packet p) => SetText(m_hoverText)    );
-        offTrigger  = ((Mouledoux.Callback.Packet p) => SetText(m_triggerText)  );
-        onHover     = ((Mouledoux.Callback.Packet p) => SetText(m_releaseText)  );
-        offHover    = ((Mouledoux.Callback.Packet p) => SetText(m_hoverText)    );
+        onTrigger   = ((object[] args) => SetText(m_hoverText)    );
+        offTrigger  = ((object[] args) => SetText(m_triggerText)  );
+        onHover     = ((object[] args) => SetText(m_releaseText)  );
+        offHover    = ((object[] args) => SetText(m_hoverText)    );
 
-        onRelease   = ((Mouledoux.Callback.Packet p) => {
+        onRelease   = ((object[] args) => {
             SetText(m_completeText);
             m_subscriptions.UnsubscribeAll();
             onComplete.Invoke();

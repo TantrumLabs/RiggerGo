@@ -54,7 +54,7 @@ public class KeyboardEventManager : MonoBehaviour
 
     public void Broadcast(string message)
     {
-        Mouledoux.Components.Mediator.instance.NotifySubscribers(message, new Mouledoux.Callback.Packet());
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(message);
     }
 }
 

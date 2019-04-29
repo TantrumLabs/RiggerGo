@@ -13,17 +13,17 @@ public class HazardObject : InteractableObject
 
     [ContextMenu("OnHighlight")]
     private void CallOnHighlight(){
-        base.onHighlight.Invoke(new Mouledoux.Callback.Packet());
+        base.onHighlight.Invoke(new object[]{});
     }
 
     [ContextMenu("OffHighlight")]
     private void CallOffHighlight(){
-        base.offHighlight.Invoke(new Mouledoux.Callback.Packet());
+        base.offHighlight.Invoke(new object[]{});
     }
 
     [ContextMenu("OffInteract")]
     private void CallOffInteract(){
-        base.offInteract.Invoke(new Mouledoux.Callback.Packet());
+        base.offInteract.Invoke(new object[]{});
     }
 
     public void IncreaseScore()
@@ -31,18 +31,21 @@ public class HazardObject : InteractableObject
         var packet = new Mouledoux.Callback.Packet();
         packet.floats = new float[]{m_scoreValue};
         packet.bools = new bool[]{false};
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
+        object[] data = {packet};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", data);
     }
 
     public void NotActive(){
         var packet = new Mouledoux.Callback.Packet();
         packet.ints = new int[]{gameObject.GetInstanceID()};
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("nolongeractive", packet);
+        object[] data = {packet};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("nolongeractive", data);
     }
 
-    private void AppendName(Mouledoux.Callback.Packet packet){
-        var data = new Mouledoux.Callback.Packet();
-        data.strings = new string[]{gameObject.name + ", "};
+    private void AppendName(Mouledoux.Callback.Packet a_packet){
+        var packet = new Mouledoux.Callback.Packet();
+        packet.strings = new string[]{gameObject.name + ", "};
+        object[] data = {packet};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("appendbigtext", data);
     }
 }

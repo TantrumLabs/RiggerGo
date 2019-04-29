@@ -4,7 +4,9 @@
     /// Callback action to be used by all subscribers
     /// </summary>
     /// <param name="data">Predefined data Packet to act as potential arguments for subscriptions</param>
-    public delegate void Callback(Packet data);
+    //public delegate void Callback(Packet data);
+
+    public delegate void Callback(object[] args);
 
     /// <summary>
     /// Collecion of basic variables to be sent via delegates
@@ -56,16 +58,4 @@
             this.strings = strings;
         }
     }
-
-    /* Hash packet, removed for now
-    public sealed class HashPacket
-    {
-        public System.Collections.Hashtable hashData;
-
-        public HashPacket()
-        {
-            hashData = new System.Collections.Hashtable();
-        }
-    }
-    *******************************************************/
 }

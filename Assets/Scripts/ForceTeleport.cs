@@ -173,11 +173,12 @@ public class ForceTeleport : MonoBehaviour
 
         var pack = new Mouledoux.Callback.Packet();
         pack.ints = new int[]{currentPoint};
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("teleporting", pack);
+        object[] data = {pack};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("teleporting", data);
         StartTeleport(railPoints[currentPoint]);
     }
 
-    public void NextRailPoint(Mouledoux.Callback.Packet data)
+    public void NextRailPoint(object[] args)
     {
         NextRailPoint();
     }

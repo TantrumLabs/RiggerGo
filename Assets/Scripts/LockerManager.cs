@@ -14,6 +14,7 @@ public class LockerManager : MonoBehaviour
         var packet = new Mouledoux.Callback.Packet();
         packet.floats = new float[]{m_scoreValue};
         packet.bools = new bool[]{false};
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", packet);
+        object[] data = {packet};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("incrementcurrentscore", data);
     }
 }

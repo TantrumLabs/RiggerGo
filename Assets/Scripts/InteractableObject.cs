@@ -64,23 +64,23 @@ public class InteractableObject : MonoBehaviour
         m_subscriptions.UnsubscribeAll();
     }
 
-    protected void OnHighlight(Mouledoux.Callback.Packet packet)
+    protected void OnHighlight(object[] args)
     {
         m_onHighnight.Invoke();
     }
 
-    protected void OffHighlight(Mouledoux.Callback.Packet packet)
+    protected void OffHighlight(object[] args)
     {
         m_offHighnight.Invoke();
     }
 
 
-    protected void OnInteract(Mouledoux.Callback.Packet packet)
+    protected void OnInteract(object[] args)
     {
         m_onInteract.Invoke();
     }
 
-    protected void OffInteract(Mouledoux.Callback.Packet packet)
+    protected void OffInteract(object[] args)
     {
         m_offInteract.Invoke();
     }
