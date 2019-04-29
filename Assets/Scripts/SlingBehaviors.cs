@@ -22,6 +22,17 @@ public class SlingBehaviors : MonoBehaviour
         transform.Rotate(m_newRotation);
 
         m_questionGameObject.SetActive(true);
+        gameObject.GetComponent<HazardObject>().enabled = false;
+        object[] objarray = {this};
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+    }
+
+    public void SetBack(){
+        transform.localPosition = m_oldPosition;
+        transform.localRotation = m_oldRotation;
+
+        m_questionGameObject.SetActive(false);
+        gameObject.GetComponent<HazardObject>().enabled = true;
     }
 
     public void Deactivate(){
