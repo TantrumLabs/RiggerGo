@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.36739814, g: 0.44569504, b: 0.5599885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,6 +154,72 @@ Transform:
   m_Father: {fileID: 1742792311}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &44148305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7112873599321385710, guid: bd147442216ecaf489685cbcbc2b4c81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1716405017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &44148306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44148305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1189862574}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 1
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &53098854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3445,16 +3511,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_includeFinalAnswer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1786256989}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. 30 degrees
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. They're all the same.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3486,11 +3562,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_HorizontalOverflow
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: A. 30 degrees
-      objectReference: {fileID: 0}
     - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_Text
@@ -3500,11 +3571,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: C. 45 degrees
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: D. They're all the same.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
@@ -5056,16 +5122,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_includeFinalAnswer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1786256989}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. The load may topple
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. The load 'sits down' in the sling bridle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6831779915623047828, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5097,11 +5173,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_HorizontalOverflow
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: A. The load may topple
-      objectReference: {fileID: 0}
     - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_Text
@@ -5111,11 +5182,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: C. The load is well balanced
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: D. The load 'sits down' in the sling bridle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
@@ -5399,6 +5465,54 @@ Transform:
   m_Father: {fileID: 13768570}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1268302417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268302419}
+  - component: {fileID: 1268302418}
+  m_Layer: 8
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1268302418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268302417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: fd90258bc1c241c47aebdb295a3fd662, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &1268302419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268302417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304930574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,16 +5754,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_includeFinalAnswer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4224179550742305560, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1786256989}
+    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: A. Load 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_Text
+      value: D. None of these are stable.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220823668777130080, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
+        type: 3}
+      propertyPath: m_includeFinalAnswer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7223826691658769341, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_Text
@@ -5660,11 +5784,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 120
       objectReference: {fileID: 0}
-    - target: {fileID: 1491379642288862664, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: A. Load 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5373910590122518317, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
         type: 3}
       propertyPath: m_Text
@@ -5674,11 +5793,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: C. Load 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549853111925473792, guid: 67f8b03249cd78342b4ce8988a7c1ae3,
-        type: 3}
-      propertyPath: m_Text
-      value: D. None of these are stable.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f8b03249cd78342b4ce8988a7c1ae3, type: 3}
@@ -6595,6 +6709,16 @@ PrefabInstance:
     - target: {fileID: 5353609658170455676, guid: bd147442216ecaf489685cbcbc2b4c81,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112873599321385709, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112873598103008552, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_ForceIntoRT
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

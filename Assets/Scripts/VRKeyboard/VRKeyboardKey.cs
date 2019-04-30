@@ -26,6 +26,10 @@ public class VRKeyboardKey : InteractableObject
     [SerializeField] private Material m_disabledMat;
     [SerializeField] private MeshRenderer m_backgroundMesh;
 
+    private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
+        new Mouledoux.Components.Mediator.Subscriptions();
+
+    private Mouledoux.Callback.Callback onShift, onKeyPress;
 
     public void Initialize(string a_keyboardID, string a_mainString, string a_shiftString = "", bool a_capsShift = true)
     {
@@ -43,6 +47,14 @@ public class VRKeyboardKey : InteractableObject
         m_offHighnight.AddListener(delegate{SetMaterial(m_normalMat);});
         m_onInteract.AddListener(delegate{  });
         m_offInteract.AddListener(delegate{PressKey();});
+
+        onShift = null;
+        onKeyPress = null;
+        m_subscriptions.UnsubscribeAll();
+
+        onKeyPress += ShiftKey;
+
+        m_subscriptions.Subscribe($"vrkeyboard:{m_keyboardID}", onKeyPress);
 
         DefaultKey();
         ResetMaterial();
@@ -106,6 +118,22 @@ public class VRKeyboardKey : InteractableObject
         return 0;
     }
 
+    public void ShiftKey(object[] args)
+    {
+        if(isShifted)
+        {
+            DefaultKey();
+        }
+
+        else if(args[0].GetType() == typeof(VRKeyboardKey))
+        {
+            VRKeyboardKey key = (VRKeyboardKey)args[0];
+            if(key.GetMainKey() == "shift")
+            {
+                ShiftKey();
+            }
+        }
+    }
 
 
     public bool SetKeyEnabled(bool a_enabled)
