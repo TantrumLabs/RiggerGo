@@ -30,7 +30,7 @@ public class LockerManager : MonoBehaviour
             var lockerItem = go.GetComponent<LockerItem>();
             var hazardObject = go.GetComponent<HazardObject>();
 
-            TurnOffChild(go, "");
+            TurnOffChild(go, "Toggle Highlight");
 
             if(lockerItem.turnOn){
                 if(hazardObject.m_scoreValue < 0)
