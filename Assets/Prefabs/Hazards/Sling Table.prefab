@@ -13618,7 +13618,7 @@ MonoBehaviour:
   m_onHighnight:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4629798298849203825}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13634,7 +13634,7 @@ MonoBehaviour:
   m_offHighnight:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4629798298849203825}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13655,7 +13655,7 @@ MonoBehaviour:
   m_offInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4629798298849203825}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13666,7 +13666,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5561082663461419798}
         m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
@@ -13698,7 +13698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_newPosition: {x: 0, y: 1.7, z: 1.3}
-  m_newRotation: {x: 0, y: 0, z: 0}
+  m_newRotation: {x: 0, y: -180, z: 0}
   m_questionGameObject: {fileID: 6054224475594735370}
 --- !u!1 &2971223531807499717
 GameObject:
