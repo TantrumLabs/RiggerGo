@@ -31,7 +31,7 @@ public class QuestionWallRandomizer : MonoBehaviour
             positionList.Remove(positionList[index]);
 
             RectTransform goRectTransform = go.GetComponent<RectTransform>();
-            Text goText = go.GetComponentInChildren<Text>();
+            TextMesh goText = go.GetComponentInChildren<TextMesh>();
             var tempText = goText.text;
             var parsedString = tempText.Split(new char[]{'.'});
             string result = "";
