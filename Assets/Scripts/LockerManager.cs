@@ -30,14 +30,17 @@ public class LockerManager : MonoBehaviour
             var lockerItem = go.GetComponent<LockerItem>();
             var hazardObject = go.GetComponent<HazardObject>();
 
+            TurnOffChild(go, "");
+
             if(lockerItem.turnOn){
                 if(hazardObject.m_scoreValue < 0)
                 {
-                    go.transform.FindChild("");
+                    TurnOnChild(go, "Correct highlight");
                     continue;
                 }
 
                 else{
+                    TurnOnChild(go, "Wrong Highlight");
                     result += go.name+", ";
                 }
             }
@@ -52,10 +55,27 @@ public class LockerManager : MonoBehaviour
 
             if(lockerItem.turnOn == false && hazardObject.m_scoreValue > 0){
                 result += go.name+", ";
+                TurnOnChild(go, "Highlight");
             }
         }
 
         m_displayText.fontSize = 40;
         m_displayText.text = result;
+    }
+
+    private void TurnOnChild(GameObject go, string name){
+        foreach(Transform t in go.transform){
+            if(t.name == name){
+                t.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void TurnOffChild(GameObject go, string name){
+        foreach(Transform t in go.transform){
+            if(t.name == name){
+                t.gameObject.SetActive(false);
+            }
+        }
     }
 }
