@@ -25,6 +25,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
+    [ContextMenu("Next Question")]
     public void RemoveCurrentQuestion(){
         if(m_turnGameobjectsOff){
             m_questionGameObjects[0].SetActive(false);

@@ -31,47 +31,41 @@ public class QuestionWallRandomizer : MonoBehaviour
             positionList.Remove(positionList[index]);
 
             RectTransform goRectTransform = go.GetComponent<RectTransform>();
-            TextMesh goText = go.GetComponentInChildren<TextMesh>();
+            TMPro.TextMeshProUGUI goText = go.GetComponentInChildren<TMPro.TextMeshProUGUI>();
             var tempText = goText.text;
-            var parsedString = tempText.Split(new char[]{'.'});
-            string result = "";
+            //var parsedString = tempText.Split(new char[]{'.'});
+            //string result = "";
 
             switch(position){
                 case 0:
                     goRectTransform.anchorMax = new Vector2(1, .65f);
                     goRectTransform.anchorMin = new Vector2(0, .55f);
-                    parsedString[0] = "A";
+                    goText.text = "A. " + goText.text;
                     break;
 
                 case 1:
                     goRectTransform.anchorMax = new Vector2(1, .5f);
                     goRectTransform.anchorMin = new Vector2(0, .4f);
-                    parsedString[0] = "B";
+                    goText.text = "B. " + goText.text;
                     break;
 
                 case 2:
                     goRectTransform.anchorMax = new Vector2(1, .35f);
                     goRectTransform.anchorMin = new Vector2(0, .25f);
-                    parsedString[0] = "C";
+                    goText.text = "C. " + goText.text;
                     break;
 
                 case 3:
                     goRectTransform.anchorMax = new Vector2(1, .2f);
                     goRectTransform.anchorMin = new Vector2(0, .1f);
-                    parsedString[0] = "D";
+                    goText.text = "D. " + goText.text;
                     break;
 
                 default:
                     break;
             }
 
-            foreach(string s in parsedString)
-            {
-                 if(s!=" " && s!="")
-                     result += s+ ".";
-            }
-
-            goText.text = result;
+            //goText.text = result;
 
         }
     }
