@@ -50,6 +50,9 @@ public class VRKeyboardInput : MonoBehaviour
                     m_inputField.text += " ";
                     break;
 
+                case "shift":
+                    break;
+
                 default:
                     m_inputField.text += key.GetCurrentKey();
                     break;
