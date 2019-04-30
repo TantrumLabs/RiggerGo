@@ -1,0 +1,318 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &174826986513194960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4371706867025599803, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Name
+      value: 3. Hand Signals(Raise the Boom)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813481292316610590, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: C. Two hands, thumbs pointing towards each other, clenched fist
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: What is the hand signal to raise the boom of a crane?
+      objectReference: {fileID: 0}
+    - target: {fileID: 394185489030798537, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: "B. \rIndex finger up"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582551035726614060, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: A. Thumb up, clenched fist
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463625183906488572, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemoveCurrentQuestion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463625183906488572, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514938005204449764, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: D. None of the above.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: 'What is the hand signal to
+
+        raise the boom of a crane?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: None of the above
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Thumb up, open hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Index finger up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Thumb up, clenched fist
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d656266dbf472046a97ff3d0841421b, type: 3}

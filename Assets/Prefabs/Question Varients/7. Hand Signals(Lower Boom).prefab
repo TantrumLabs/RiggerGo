@@ -164,7 +164,7 @@ PrefabInstance:
     - target: {fileID: 4371706867025599803, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Name
-      value: Hand Signals(Emergency Stop)
+      value: 7. Hand Signals(Lower Boom)
       objectReference: {fileID: 0}
     - target: {fileID: 1233878437023826929, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -221,35 +221,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7036149289846330590, guid: 6d656266dbf472046a97ff3d0841421b,
+    - target: {fileID: 3467042656641917828, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6762000022398359700, guid: 6d656266dbf472046a97ff3d0841421b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2300
-      objectReference: {fileID: 0}
-    - target: {fileID: 2407650943941878596, guid: 6d656266dbf472046a97ff3d0841421b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2300
-      objectReference: {fileID: 0}
-    - target: {fileID: 2294272207877391223, guid: 6d656266dbf472046a97ff3d0841421b,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514938005204449764, guid: 6d656266dbf472046a97ff3d0841421b,
-        type: 3}
-      propertyPath: m_Text
-      value: D. None of the above.
+      propertyPath: m_includeFinalAnswer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1813481292316610590, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: C. Dog Everything
+      value: C. Lower boom and raise the load
       objectReference: {fileID: 0}
     - target: {fileID: 3146796449366497369, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -284,12 +264,12 @@ PrefabInstance:
     - target: {fileID: 394185489030798537, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: B. Stop
+      value: B. Lower Load
       objectReference: {fileID: 0}
     - target: {fileID: 6582551035726614060, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
       propertyPath: m_Text
-      value: A. Emergency Stop
+      value: A. Lower Boom
       objectReference: {fileID: 0}
     - target: {fileID: 8463625183906488572, guid: 6d656266dbf472046a97ff3d0841421b,
         type: 3}
@@ -300,6 +280,188 @@ PrefabInstance:
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514938005204449764, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_Text
+      value: D. Retract boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: 'What hand signal is the
+
+        rigger performing? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473852623066347698, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Lower the boom & lower the load
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021847274652888524, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Lower boom & hoist the load
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609480452429405014, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Lower load
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137352778042393547, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_text
+      value: Lower boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376213398809467785, guid: 6d656266dbf472046a97ff3d0841421b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d656266dbf472046a97ff3d0841421b, type: 3}
@@ -404,19 +566,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.5671
       objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 400004, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 400004, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5671
       objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 400006, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 400006, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5671
       objectReference: {fileID: 0}
@@ -427,24 +589,12 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0fb23b9b4b75a344a8fa2534f9b84d66, type: 2}
-    - target: {fileID: 100270, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+      objectReference: {fileID: 9100000, guid: 5a5e8319103656f4b969edc5459dda8d, type: 2}
+    - target: {fileID: 100048, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100298, guid: 16221a193045fc043b49eb3749828b44, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100302, guid: 16221a193045fc043b49eb3749828b44, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100300, guid: 16221a193045fc043b49eb3749828b44, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100168, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 100052, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -452,11 +602,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100048, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 100168, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100052, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+    - target: {fileID: 100298, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100300, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100302, guid: 16221a193045fc043b49eb3749828b44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100270, guid: 16221a193045fc043b49eb3749828b44, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
