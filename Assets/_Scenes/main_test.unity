@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.36739814, g: 0.44569504, b: 0.5599885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10776,6 +10776,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7112873598077388507, guid: bd147442216ecaf489685cbcbc2b4c81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10831,46 +10846,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7112873598077388505, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: resetTrackerOnLoad
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7112873598646746368, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847432274437719416, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_Name
-      value: Ready
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190327311018138092, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 309318783423594964, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_Target
-      value: 
-      objectReference: {fileID: 1189862574}
-    - target: {fileID: 7112873598646746372, guid: bd147442216ecaf489685cbcbc2b4c81,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7112873598880041970, guid: bd147442216ecaf489685cbcbc2b4c81,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10881,9 +10856,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.00006484985
       objectReference: {fileID: 0}
-    - target: {fileID: 7112873598103008552, guid: bd147442216ecaf489685cbcbc2b4c81,
+    - target: {fileID: 7112873598646746372, guid: bd147442216ecaf489685cbcbc2b4c81,
         type: 3}
-      propertyPath: m_ForceIntoRT
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5700959979039550575, guid: bd147442216ecaf489685cbcbc2b4c81,
@@ -10900,6 +10875,31 @@ PrefabInstance:
         type: 3}
       propertyPath: onComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847432274437719416, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_Name
+      value: Ready
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190327311018138092, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 309318783423594964, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 1189862574}
+    - target: {fileID: 7112873598077388505, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: resetTrackerOnLoad
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112873598103008552, guid: bd147442216ecaf489685cbcbc2b4c81,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7112873599321385709, guid: bd147442216ecaf489685cbcbc2b4c81,
         type: 3}
@@ -13121,7 +13121,7 @@ PrefabInstance:
     - target: {fileID: 5694819575414248059, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5694819575414248059, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
         type: 3}

@@ -30,8 +30,13 @@ public class VRKeyboardInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        keyboardID = m_keyboardID;
+        //keyboardID = m_keyboardID;
         m_inputField = GetComponent<UnityEngine.UI.InputField>();
+    }
+
+    void Update()
+    {
+        m_inputField.text = OVRManager.display.acceleration.ToString();
     }
 
     public void AddText(object[] args)
