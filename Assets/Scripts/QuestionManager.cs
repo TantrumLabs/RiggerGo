@@ -41,4 +41,12 @@ public class QuestionManager : MonoBehaviour
             m_questionGameObjects[0].SetActive(true);
         }
     }
+
+    public void RemoveCurrentQuestion(GameObject go){
+        m_questionGameObjects.Remove(go);
+
+        if(m_questionGameObjects.Count <= 0){
+            m_onEmpty.Invoke();
+        }
+    }
 }

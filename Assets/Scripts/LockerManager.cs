@@ -23,9 +23,10 @@ public class LockerManager : MonoBehaviour
     }
 
     public void LockerFinished(){
-        string result = "These are not needed for a lift:";
+        string result = "";
 
-
+        int correctScore = 0;
+        int wrongScore = 0;
         foreach(GameObject go in m_lockerItems){
             var lockerItem = go.GetComponent<LockerItem>();
             var hazardObject = go.GetComponent<HazardObject>();
@@ -36,18 +37,16 @@ public class LockerManager : MonoBehaviour
                 if(hazardObject.m_scoreValue < 0)
                 {
                     TurnOnChild(go, "Correct highlight");
+                    correctScore++;
                     continue;
                 }
 
                 else{
                     TurnOnChild(go, "Wrong Highlight");
-                    result += go.name+", ";
+                    wrongScore++;
                 }
             }
         }
-
-        result += "\n";
-        result += "Here are some you missed:";
 
         foreach(GameObject go in m_lockerItems){
             var lockerItem = go.GetComponent<LockerItem>();
@@ -59,7 +58,9 @@ public class LockerManager : MonoBehaviour
             }
         }
 
-        m_displayText.fontSize = 40;
+        result += "Correct: " + correctScore + "/7";
+        result += "\n";
+        result += "Wrong: " + wrongScore;
         m_displayText.text = result;
     }
 
