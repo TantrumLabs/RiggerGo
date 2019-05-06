@@ -57,4 +57,9 @@ public class TwitchGameObjectTranslate : MonoBehaviour
                 break;
         }
     }
+
+    public void OnDestroy(){
+        transform.position = origin;
+        Destroy(this);
+    }
 }

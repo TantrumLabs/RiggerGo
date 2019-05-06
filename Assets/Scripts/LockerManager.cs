@@ -53,7 +53,7 @@ public class LockerManager : MonoBehaviour
             var hazardObject = go.GetComponent<HazardObject>();
 
             if(lockerItem.turnOn == false && hazardObject.m_scoreValue > 0){
-                result += go.name+", ";
+                //result += go.name+", ";
                 TurnOnChild(go, "Highlight");
             }
         }
