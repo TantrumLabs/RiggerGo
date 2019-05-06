@@ -12400,8 +12400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d8be6013bb8164694f94a15f67a753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_twitchFactor: 0
-  m_velocity: {x: 0, y: 0, z: 0}
+  m_twitchFactor: 4
+  m_velocity: {x: 2, y: 0, z: 0}
   m_moveOn: 0
 --- !u!114 &1248353115
 MonoBehaviour:
@@ -12415,8 +12415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e398f0d65339849a4dc6af8ab79ed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_twitchFactor: 0
-  m_speed: 0
+  m_twitchFactor: 8
+  m_speed: 2
 --- !u!1 &1259389969
 GameObject:
   m_ObjectHideFlags: 0
@@ -12889,6 +12889,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1656363120}
     m_Modifications:
+    - target: {fileID: 2399550285505628027, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
+        type: 3}
+      propertyPath: m_Name
+      value: Locker Identification
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399550285505628027, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 688405637836275014, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12983,16 +12993,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399550285505628027, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
-        type: 3}
-      propertyPath: m_Name
-      value: Locker Identification
-      objectReference: {fileID: 0}
-    - target: {fileID: 2399550285505628027, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962253763418412332, guid: b57bc2a6d3a11934e94f1c4a7d42869e,
         type: 3}
@@ -13962,7 +13962,7 @@ PrefabInstance:
     - target: {fileID: 1134401250712707704, guid: 2245a8b5e4e29384190d2802f8bfc171,
         type: 3}
       propertyPath: m_Name
-      value: BlankHazardObject
+      value: Swinging Load
       objectReference: {fileID: 0}
     - target: {fileID: 1134401250712707705, guid: 2245a8b5e4e29384190d2802f8bfc171,
         type: 3}
@@ -20354,6 +20354,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sling Table
       objectReference: {fileID: 0}
+    - target: {fileID: 2308413164853418085, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
+        type: 3}
+      propertyPath: m_onEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1118456896}
     - target: {fileID: 5694819575414248059, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20409,11 +20414,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2308413164853418085, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
-        type: 3}
-      propertyPath: m_onEmpty.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1118456896}
     - target: {fileID: 2151409376885539533, guid: 0187f4e32fa9ef643a74bc90f2ebbf8a,
         type: 3}
       propertyPath: m_action.m_PersistentCalls.m_Calls.Array.size
