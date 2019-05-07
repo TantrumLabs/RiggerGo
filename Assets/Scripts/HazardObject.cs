@@ -48,4 +48,8 @@ public class HazardObject : InteractableObject
         object[] data = {packet};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("appendbigtext", data);
     }
+
+    public void DisableSelf(){
+        Destroy(this);
+    }
 }

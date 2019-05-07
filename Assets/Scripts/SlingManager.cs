@@ -25,6 +25,12 @@ public class SlingManager : MonoBehaviour
         else{
             if(m_currentSling != null)
                 m_currentSling.SetBack();
+
+            if(m_currentSling == objArray[0] as SlingBehaviors)
+                {
+                    m_currentSling = null;
+                    return;
+                }
             m_currentSling = objArray[0] as SlingBehaviors;
         }
     }
