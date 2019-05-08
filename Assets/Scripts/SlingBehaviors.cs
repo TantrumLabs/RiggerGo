@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SlingBehaviors : MonoBehaviour
 {
+    public GameObject m_wrongHighlight;
+    public GameObject m_rightHighlight;
+
     public Vector3 m_newPosition;
     public Vector3 m_newRotation;
 
@@ -40,8 +43,17 @@ public class SlingBehaviors : MonoBehaviour
         transform.localRotation = m_oldRotation;
 
         m_questionGameObject.SetActive(false);
-        Destroy(gameObject.GetComponent<HazardObject>());
+        gameObject.GetComponent<HazardObject>().enabled = true;
         object[] objarray = {null};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+    }
+
+    public void PickHighlight(bool pass){
+        if(pass)
+            m_rightHighlight.SetActive(true);
+        else
+        {
+            m_wrongHighlight.SetActive(true);
+        }
     }
 }
