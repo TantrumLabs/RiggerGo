@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LockerManager : MonoBehaviour
 {
-    public List<GameObject> m_lockerItems;
+    public List<GameObject> m_lockerItems = new List<GameObject>();
     public TMPro.TextMeshProUGUI m_displayText;
 
     private float m_scoreValue;
@@ -58,7 +58,7 @@ public class LockerManager : MonoBehaviour
             }
         }
 
-        result += "Correct: " + correctScore + "/7";
+        result += "Correct: " + correctScore + "/6";
         result += "\n";
         result += "Wrong: " + wrongScore;
         m_displayText.text = result;

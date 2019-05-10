@@ -14,7 +14,7 @@ public class DelayEventOnStart : MonoBehaviour
 
 
 
-    private void Start()
+    private void OnEnable()
     {
         if(m_selfDestruct) m_action.AddListener(delegate{Destroy(this);});
         if(m_onStart) BeginCountdown();
@@ -30,4 +30,9 @@ public class DelayEventOnStart : MonoBehaviour
 		yield return new WaitForSeconds(m_delay);
         m_action.Invoke();
 	}
+
+    [ContextMenu("Invoke")]
+    private void Invoke(){
+        m_action.Invoke();
+    }
 }

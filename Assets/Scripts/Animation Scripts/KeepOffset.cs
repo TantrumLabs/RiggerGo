@@ -15,7 +15,7 @@ public class KeepOffset : MonoBehaviour
         m_offset = transform.position - m_target.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         var newPos = transform.position;
         if(!m_lockX)
