@@ -21,6 +21,7 @@ public class SearchAndFindManager : MonoBehaviour
                 continue;
 
             highLight.gameObject.SetActive(true);
+            ScoreKeeper.instance.AppendHazard(go);
         }
     }
 
@@ -38,5 +39,10 @@ public class SearchAndFindManager : MonoBehaviour
         }
 
         m_onEmpty.Invoke();
+    }
+
+    public void DestroyHazardScripts(){
+        foreach(GameObject go in m_hazards)
+            Destroy(go.GetComponent<HazardObject>());
     }
 }

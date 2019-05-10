@@ -400,9 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_twitchFactor: 0.25
   m_velocity: {x: 0, y: 1, z: 0}
-  m_x: 0
-  m_y: 1
-  m_z: 0
+  m_moveOn: 0
 --- !u!114 &3526075385492881707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,11 +486,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 00cbb98f95edfd64ebd21e776e22cf52, type: 3}
+    - target: {fileID: 2300002, guid: 00cbb98f95edfd64ebd21e776e22cf52, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1ba79a8899c3311439f150190875d29f, type: 2}
-    - target: {fileID: 2300002, guid: 00cbb98f95edfd64ebd21e776e22cf52, type: 3}
+    - target: {fileID: 2300000, guid: 00cbb98f95edfd64ebd21e776e22cf52, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1ba79a8899c3311439f150190875d29f, type: 2}

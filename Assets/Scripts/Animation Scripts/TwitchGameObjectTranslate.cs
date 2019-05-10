@@ -59,7 +59,7 @@ public class TwitchGameObjectTranslate : MonoBehaviour
     }
 
     public void OnDestroy(){
-        transform.position = origin;
+        transform.localPosition = origin;
         Destroy(this);
     }
 }

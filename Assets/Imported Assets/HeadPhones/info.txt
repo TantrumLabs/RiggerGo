@@ -1,0 +1,9 @@
+﻿Name: naushniki_telefon
+Version: 2013
+Preview: Yes
+Units: Millimeters
+Dimension: 450.7 x 405.22 x 143.43
+Polys: 127 636
+Model Parts: 418
+Render: V-Ray
+Formats: 3Ds Max 2013
