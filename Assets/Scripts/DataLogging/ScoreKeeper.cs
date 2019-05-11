@@ -130,4 +130,16 @@ public class ScoreKeeper : MonoBehaviour
     //for question: Canvas/Text Field/Text/TMPro.TextMeshProUGUI.text
     //for answer: 
     //  Canvas/Look at all active children/Find the one that has Wrong in name.
+    public void GetQuestionAndGivenAnswer(GameObject go){   // GameObject will be the canvas
+        var question = go.transform.Find("Text Field").Find("Text")
+            .GetComponent<TMPro.TextMeshProUGUI>().text;
+
+        string answerGiven = "";
+        foreach(Transform t in go.transform){
+            if(t.gameObject.activeSelf && t.name.Contains("Wrong")){
+                TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+                answerGiven = text.text;
+            }
+        }
+    }
 }

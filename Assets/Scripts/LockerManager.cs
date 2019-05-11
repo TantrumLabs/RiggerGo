@@ -62,6 +62,7 @@ public class LockerManager : MonoBehaviour
         result += "\n";
         result += "Wrong: " + wrongScore;
         m_displayText.text = result;
+        SendScore();
     }
 
     private void TurnOnChild(GameObject go, string name){
