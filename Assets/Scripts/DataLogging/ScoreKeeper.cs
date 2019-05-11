@@ -124,4 +124,10 @@ public class ScoreKeeper : MonoBehaviour
 
         m_resultsScreen.text = result;
     }
+
+    //Find a way to record both answer and Question.
+
+    //for question: Canvas/Text Field/Text/TMPro.TextMeshProUGUI.text
+    //for answer: 
+    //  Canvas/Look at all active children/Find the one that has Wrong in name.
 }
