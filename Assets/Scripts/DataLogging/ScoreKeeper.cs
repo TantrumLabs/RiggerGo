@@ -78,7 +78,8 @@ public class ScoreKeeper : MonoBehaviour
                 continue;
             
             foreach(GameObject go in qm.m_questionGameObjects){
-                data.m_maxScore++;
+                if(go.name != "Locker Identification")
+                    data.m_maxScore++;
             }
         }
 
