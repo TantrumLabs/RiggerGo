@@ -10,6 +10,7 @@ public class ForceTeleport : MonoBehaviour
     private Vector3 originalPos;
     private Quaternion originalRot;
     public GameObject objectRef;
+    public float m_revealTime;
 
     public List<Transform> railPoints;
     public int currentPoint = 0;
@@ -41,11 +42,6 @@ public class ForceTeleport : MonoBehaviour
         m_subscriptions.UnsubscribeAll();
     }
 
-    public void SetoriginalPos()
-    {
-
-    }
-
     /// <summary>
     ///     Used to call via the messenger
     /// </summary>
@@ -65,7 +61,7 @@ public class ForceTeleport : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         StartCoroutine(FadeInOut());
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         print("Teleported to: " + pos.gameObject.name);
         pos.gameObject.SetActive(true);
         objectRef.transform.position = pos.position;
@@ -136,7 +132,9 @@ public class ForceTeleport : MonoBehaviour
             c.a = 1f;
             blindfold.color = c;
 
-            while (blindfold.color.a > 0.01f)
+            yield return new WaitForSeconds(m_revealTime);
+
+            while (blindfold.color.a > 0.001f)
             {
                 c.a -= (Time.deltaTime / fadeTime);
                 blindfold.color = c;
