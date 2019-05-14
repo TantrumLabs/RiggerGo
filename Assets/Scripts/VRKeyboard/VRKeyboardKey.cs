@@ -70,6 +70,7 @@ public class VRKeyboardKey : InteractableObject
     public void PressKey()
     {
         Mouledoux.Components.Mediator.instance.NotifySubscribers($"vrkeyboard:{m_keyboardID}", new object[] {this});
+        
     }
 
 
@@ -150,5 +151,25 @@ public class VRKeyboardKey : InteractableObject
     private void ResetMaterial()
     {
         SetMaterial(m_normalMat);
+    }
+
+    [ContextMenu("On Interact")]
+    private void OnInteract(){
+        m_onInteract.Invoke();
+    }
+
+    [ContextMenu("Off Interact")]
+    private void OffInteract(){
+        m_offInteract.Invoke();
+    }
+
+    [ContextMenu("On Highlight")]
+    private void OnHighlight(){
+        m_onHighnight.Invoke();
+    }
+
+    [ContextMenu("Off Highlight")]
+    private void OffHighlight(){
+        m_offHighnight.Invoke();
     }
 }

@@ -17,6 +17,8 @@ public class ScoreKeeper : MonoBehaviour
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
     private QuestionHazardData data = new QuestionHazardData();
+    private string m_emailData;
+
     public LockerManager m_lockerManager;
 
     public int Score{
@@ -37,6 +39,7 @@ public class ScoreKeeper : MonoBehaviour
 
     void Start(){
         SetMaxScore();
+        m_emailData = TransitionDataHolder.instance.m_emailData;
     }
 
     public void AddToScore(int addition){
@@ -148,7 +151,7 @@ public class ScoreKeeper : MonoBehaviour
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
-        SaveLocally.SaveScoreData(data, "anthonyjtouchet@gmail.com");
+        SaveLocally.SaveScoreData(data, m_emailData);
     }
 
     [ContextMenu("Load Data")]
