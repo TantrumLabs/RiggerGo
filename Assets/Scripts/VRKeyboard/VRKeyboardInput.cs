@@ -65,7 +65,16 @@ public class VRKeyboardInput : MonoBehaviour
         }
     }
 
-    public void SendEmail(){
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("getemail", new object[] {m_inputField.textComponent});
+    public void ChangeAllKeyID(string s){
+        var keys = FindObjectsOfType<VRKeyboardKey>();
+
+        foreach(VRKeyboardKey k in keys)
+        {
+            k.Initialize(s, k.GetMainKey());
+        }
+    }
+
+    public void SendInformation(string s){
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(s, new object[] {m_inputField.textComponent});
     }
 }

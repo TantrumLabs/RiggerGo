@@ -17,7 +17,6 @@ public class ScoreKeeper : MonoBehaviour
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
     private QuestionHazardData data = new QuestionHazardData();
-    private string m_emailData;
 
     public LockerManager m_lockerManager;
 
@@ -39,7 +38,6 @@ public class ScoreKeeper : MonoBehaviour
 
     void Start(){
         SetMaxScore();
-        m_emailData = TransitionDataHolder.instance.m_emailData;
     }
 
     public void AddToScore(int addition){
@@ -113,6 +111,8 @@ public class ScoreKeeper : MonoBehaviour
 
     public void SetText(){
         string result = "";
+        var inst = TransitionDataHolder.instance;
+        result += "Congrats " + inst.m_firstName + " " + inst.m_lastName + "!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
         result += "You missed " + data.m_questionCount + " questions and " + data.m_hazardCount +
             " hazards.";
@@ -151,12 +151,16 @@ public class ScoreKeeper : MonoBehaviour
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
-        SaveLocally.SaveScoreData(data, m_emailData);
+        SaveLocally.SaveScoreData(data, TransitionDataHolder.instance.m_emailData);
     }
 
     [ContextMenu("Load Data")]
     public void LoadData(){
         QuestionHazardData d = SaveLocally.LoadScoreData("0001_anthonyjtouchet@gmail.com.xml");
         Debug.Log(d.m_questionCount);
+    }
+
+    public void CallSceneEnd(string name){
+        TransitionDataHolder.instance.GoToScene(name);
     }
 }

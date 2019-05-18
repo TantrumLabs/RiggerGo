@@ -6,6 +6,7 @@ public class AudioOffset : MonoBehaviour
 {
     public AudioSource m_audioSource;
     private float m_playBackTime;
+    public List<MonoBehaviour> m_turnOff;
 
 
     void Update()
@@ -32,4 +33,8 @@ public class AudioOffset : MonoBehaviour
         m_playBackTime = m_audioSource.time + timeOffset;
     }
 
+    public void TurnOffItems(){
+        foreach(MonoBehaviour c in m_turnOff)
+            c.enabled = false;
+    }
 }

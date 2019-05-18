@@ -48,6 +48,12 @@ public class TutorialCanvas : MonoBehaviour
     
     }
 
+    public void TriggerRelease(){
+        
+        var obj = new object[]{};
+        onRelease.Invoke(obj);
+    }
+
     public void SetText(string aNewText, float startAt, float offSet)
     {
         m_tutorialText.text = aNewText;
