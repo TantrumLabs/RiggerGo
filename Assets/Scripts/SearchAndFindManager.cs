@@ -26,7 +26,7 @@ public class SearchAndFindManager : MonoBehaviour
     }
 
     [ContextMenu("Check Empty")]
-    public void OnEmpty(){
+    public void CheckEmpty(){
         foreach(GameObject go in m_hazards){
             var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)

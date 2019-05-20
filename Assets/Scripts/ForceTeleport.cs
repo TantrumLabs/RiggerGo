@@ -7,11 +7,13 @@ public class ForceTeleport : MonoBehaviour
 {
     public UnityEngine.UI.Image blindfold, m_loadingLogo;
     public TMPro.TextMeshProUGUI m_loading, m_areaTeller;
+    public ViveHandInteractionLaserPointer m_lazer;
     public float fadeTime, delayTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
     public GameObject objectRef;
     public float m_revealTime;
+
 
     public List<Transform> railPoints;
     public int currentPoint = 0;
@@ -127,7 +129,7 @@ public class ForceTeleport : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
-
+        m_lazer.enabled = false;
         if (blindfold != null)
         {
             Color c = blindfold.color;
@@ -168,6 +170,8 @@ public class ForceTeleport : MonoBehaviour
             m_loadingLogo.color = loadingLogo;
             m_areaTeller.color = loadingText;
         }
+
+        m_lazer.enabled = true;
     }
 
 

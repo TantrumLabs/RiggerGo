@@ -51,7 +51,7 @@ public class LoadingScreenTextManager : MonoBehaviour
                 break;
 
             case 8:
-                m_text.text += "Pre Lift - Boat to Rig";
+                m_text.text += "Pre Lift Inspection - Boat to Rig";
                 break;
 
             case 9:
