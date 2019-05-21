@@ -30,13 +30,13 @@ public class VRKeyboardInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //keyboardID = m_keyboardID;
+        keyboardID = m_keyboardID;
         m_inputField = GetComponent<UnityEngine.UI.InputField>();
     }
 
     void Update()
     {
-        m_inputField.text = OVRManager.display.acceleration.ToString();
+        //m_inputField.text = OVRManager.display.acceleration.ToString();
     }
 
     public void AddText(object[] args)
@@ -44,6 +44,11 @@ public class VRKeyboardInput : MonoBehaviour
         if(args[0].GetType() == typeof(VRKeyboardKey))
         {
             VRKeyboardKey key = (VRKeyboardKey)args[0];
+
+            if(key.GetMainKey() == ".com"){
+                m_inputField.text += ".com";
+                return;
+            }         
 
             switch(key.GetMainKey().ToLower())
             {
@@ -63,5 +68,18 @@ public class VRKeyboardInput : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void ChangeAllKeyID(string s){
+        var keys = FindObjectsOfType<VRKeyboardKey>();
+
+        foreach(VRKeyboardKey k in keys)
+        {
+            k.Initialize(s, k.GetMainKey());
+        }
+    }
+
+    public void SendInformation(string s){
+        Mouledoux.Components.Mediator.instance.NotifySubscribers(s, new object[] {m_inputField.textComponent});
     }
 }

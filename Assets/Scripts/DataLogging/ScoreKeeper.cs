@@ -16,14 +16,12 @@ public class ScoreKeeper : MonoBehaviour
     public ForceTeleport m_forceTeleport;
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
-    private int m_score;
-    private int m_maxScore;
-    private string m_questionsMissed, m_hazardsMissed;
-    private int m_questionCount = 0, m_hazardCount = 0;
+    private QuestionHazardData data = new QuestionHazardData();
+
     public LockerManager m_lockerManager;
 
     public int Score{
-        get{ return m_score;}
+        get{ return data.m_score;}
     }
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
@@ -44,25 +42,25 @@ public class ScoreKeeper : MonoBehaviour
 
     public void AddToScore(int addition){
         if(addition > 0)
-            m_score += addition;
+            data.m_score += addition;
     }
 
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
-        m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
-        m_questionCount++;
+        data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
+        data.m_questionCount++;
     }
 
     public void AppendHazard(GameObject hazard){
-        m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
-        m_hazardCount++;
+        data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
+        data.m_hazardCount++;
     }
 
     public string ReturnResults(){
         string result = "";
 
-        result += "Final Score" + m_score + "\n";
-        result += "Questions Missed: " + m_questionsMissed + "\n";
-        result += "Hazards Missed: " + m_hazardsMissed;
+        result += "Final Score" + data.m_score + "\n";
+        result += "Questions Missed: " + data.m_questionsMissed + "\n";
+        result += "Hazards Missed: " + data.m_hazardsMissed;
 
         return result;
     }
@@ -81,14 +79,15 @@ public class ScoreKeeper : MonoBehaviour
                 continue;
             
             foreach(GameObject go in qm.m_questionGameObjects){
-                m_maxScore++;
+                if(go.name != "Locker Identification")
+                    data.m_maxScore++;
             }
         }
 
         //Hazards
         foreach(SearchAndFindManager saf in hazardManagers){
             foreach(GameObject go in saf.m_hazards)
-                m_maxScore++;
+                data.m_maxScore++;
         }
 
         //Locker
@@ -99,7 +98,7 @@ public class ScoreKeeper : MonoBehaviour
             var ho = go.GetComponent<HazardObject>();
 
             if(ho.m_scoreValue > 0)
-                m_maxScore++;
+                data.m_maxScore++;
         }
     }
 
@@ -110,36 +109,58 @@ public class ScoreKeeper : MonoBehaviour
         AddToScore((int)packet.floats[0]);
     }
 
-    [ContextMenu("Debug Wrong")]
-    private void LogIt(){
-        Debug.Log(m_questionsMissed);
-        Debug.Log(m_hazardsMissed);
-    }
-
     public void SetText(){
         string result = "";
-        result += "Your score is: " + m_score + "/" + m_maxScore + "\n";
-        result += "You missed " + m_questionCount + " questions and " + m_hazardCount +
+        var inst = TransitionDataHolder.instance;
+        result += "Congrats " + inst.m_firstName + " " + inst.m_lastName + "!\n";
+        result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
+        result += "You missed " + data.m_questionCount + " questions and " + data.m_hazardCount +
             " hazards.";
 
         m_resultsScreen.text = result;
     }
 
-    //Find a way to record both answer and Question.
-
-    //for question: Canvas/Text Field/Text/TMPro.TextMeshProUGUI.text
-    //for answer: 
-    //  Canvas/Look at all active children/Find the one that has Wrong in name.
-    public void GetQuestionAndGivenAnswer(GameObject go){   // GameObject will be the canvas
+    public void GetQuestionAndGivenAnswer(GameObject go){
         var question = go.transform.Find("Text Field").Find("Text")
             .GetComponent<TMPro.TextMeshProUGUI>().text;
 
         string answerGiven = "";
         foreach(Transform t in go.transform){
-            if(t.gameObject.activeSelf && t.name.Contains("Wrong")){
+            if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong "))){
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
                 answerGiven = text.text;
             }
         }
+
+        var questionSplit = question.Split('\n');
+
+        question = "";
+        foreach(string s in questionSplit){
+            question += s + " ";
+        }
+
+        var answerSplit = answerGiven.Split(' ');
+        if(answerSplit[1] == null)
+            answerGiven = answerSplit[0];
+        else
+            answerGiven = answerSplit[1];
+
+        data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
+        data.m_questionCount++;
+    }
+
+    [ContextMenu("Save Data")]
+    public void SaveScore(){
+        SaveLocally.SaveScoreData(data, TransitionDataHolder.instance.m_emailData);
+    }
+
+    [ContextMenu("Load Data")]
+    public void LoadData(){
+        QuestionHazardData d = SaveLocally.LoadScoreData("0001_anthonyjtouchet@gmail.com.xml");
+        Debug.Log(d.m_questionCount);
+    }
+
+    public void CallSceneEnd(string name){
+        TransitionDataHolder.instance.GoToScene(name);
     }
 }

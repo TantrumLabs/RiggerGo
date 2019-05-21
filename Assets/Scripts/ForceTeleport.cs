@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ForceTeleport : MonoBehaviour
 {
-    public UnityEngine.UI.Image blindfold;
+    public UnityEngine.UI.Image blindfold, m_loadingLogo;
+    public TMPro.TextMeshProUGUI m_loading, m_areaTeller;
+    public ViveHandInteractionLaserPointer m_lazer;
     public float fadeTime, delayTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
     public GameObject objectRef;
+    public float m_revealTime;
+
 
     public List<Transform> railPoints;
     public int currentPoint = 0;
@@ -29,6 +33,7 @@ public class ForceTeleport : MonoBehaviour
         originalPos = objectRef.transform.localPosition;
         originalRot = objectRef.transform.localRotation;
 
+        StartCoroutine(FadeInOut());
         TurnOffOtherZones();
 
         nextRailHandler += NextRailPoint;
@@ -39,11 +44,6 @@ public class ForceTeleport : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriptions.UnsubscribeAll();
-    }
-
-    public void SetoriginalPos()
-    {
-
     }
 
     /// <summary>
@@ -65,7 +65,8 @@ public class ForceTeleport : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         StartCoroutine(FadeInOut());
-        yield return new WaitForSeconds(.1f);
+        TurnOffOtherZones();
+        yield return new WaitForSeconds(.2f);
         print("Teleported to: " + pos.gameObject.name);
         pos.gameObject.SetActive(true);
         objectRef.transform.position = pos.position;
@@ -128,24 +129,49 @@ public class ForceTeleport : MonoBehaviour
     // ---------- ---------- ---------- ---------- ---------- 
     public IEnumerator FadeInOut()
     {
-
+        m_lazer.enabled = false;
         if (blindfold != null)
         {
             Color c = blindfold.color;
+            Color loadingText = m_loading.color;
+            Color loadingLogo = m_loadingLogo.color;
+
             print(blindfold.color);
+            loadingLogo.a = 1f;
+            loadingText.a = 1f;
             c.a = 1f;
             blindfold.color = c;
+            m_loadingLogo.color = loadingLogo;
+            m_loading.color = loadingText;
+            m_areaTeller.color = loadingText;
 
-            while (blindfold.color.a > 0.01f)
+            yield return new WaitForSeconds(m_revealTime);
+
+            while (blindfold.color.a > 0.001f)
             {
-                c.a -= (Time.deltaTime / fadeTime);
+                var delta = (Time.deltaTime / fadeTime);
+
+                c.a -= delta;
+                loadingText.a -= delta;
+                loadingLogo.a -= delta;
+
+                m_loadingLogo.color = loadingLogo;
+                m_loading.color = loadingText;
+                m_areaTeller.color = loadingText;
                 blindfold.color = c;
                 yield return null;
             }
 
+            loadingLogo.a = 0f;
+            loadingText.a = 0f;
             c.a = 0f;
             blindfold.color = c;
+            m_loading.color = loadingText;
+            m_loadingLogo.color = loadingLogo;
+            m_areaTeller.color = loadingText;
         }
+
+        m_lazer.enabled = true;
     }
 
 
@@ -162,7 +188,7 @@ public class ForceTeleport : MonoBehaviour
     public void NextRailPoint()
     {
         currentPoint++;
-        TurnOffOtherZones();
+        //TurnOffOtherZones();
         if(currentPoint >= railPoints.Count - 1)
         {
             currentPoint = railPoints.Count - 1;

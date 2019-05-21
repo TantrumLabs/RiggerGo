@@ -80,6 +80,7 @@ public class InteractableObject : MonoBehaviour
         m_onInteract.Invoke();
     }
 
+    [ContextMenu("Off Interact")]
     protected void OffInteract(object[] args)
     {
         m_offInteract.Invoke();

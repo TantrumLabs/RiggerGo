@@ -5,7 +5,7 @@ using UnityEngine;
 public class TutorialCanvas : MonoBehaviour
 {
     [SerializeField]
-    UnityEngine.UI.Text m_tutorialText;
+    TMPro.TextMeshProUGUI m_tutorialText;
 
     public AudioOffset m_audioOffset;
 
@@ -46,6 +46,16 @@ public class TutorialCanvas : MonoBehaviour
     void Update()
     {
     
+    }
+
+    private void OnEnable() {
+        onTrigger.Invoke(new object[]{});    
+    }
+
+    public void TriggerRelease(){
+        
+        var obj = new object[]{};
+        onRelease.Invoke(obj);
     }
 
     public void SetText(string aNewText, float startAt, float offSet)
