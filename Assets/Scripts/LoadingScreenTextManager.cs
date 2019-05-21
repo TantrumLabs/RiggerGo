@@ -23,7 +23,7 @@ public class LoadingScreenTextManager : MonoBehaviour
                 break;
             
             case 1:
-                m_text.text += "Personal Protection Equipment";
+                m_text.text += "Personal Protective Equipment";
                 break;
 
             case 2:
@@ -43,27 +43,27 @@ public class LoadingScreenTextManager : MonoBehaviour
                 break;
 
             case 6:
-                m_text.text += "Pre Drop - Rig to Boat";
+                m_text.text += "Supply Vessel Pre-Lift";
                 break;
 
             case 7:
-                m_text.text += "Drop - Rig to Boat";
+                m_text.text += "Supply Vessel Lift";
                 break;
 
             case 8:
-                m_text.text += "Pre Lift Inspection - Boat to Rig";
+                m_text.text += "Lift from Supply Vessel";
                 break;
 
             case 9:
-                m_text.text += "Pre Drop - Boat to Rig";
+                m_text.text += "Platform Pre-Lift Inspection";
                 break;
 
             case 10:
-                m_text.text += "Drop - Boat to Rig";
+                m_text.text += "Platform Lift";
                 break;
 
             case 11:
-                m_text.text += "Lift Completion";
+                m_text.text += "Lift Completion Zone";
                 break;
 
             case 12:

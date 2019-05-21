@@ -45,6 +45,11 @@ public class VRKeyboardInput : MonoBehaviour
         {
             VRKeyboardKey key = (VRKeyboardKey)args[0];
 
+            if(key.GetMainKey() == ".com"){
+                m_inputField.text += ".com";
+                return;
+            }         
+
             switch(key.GetMainKey().ToLower())
             {
                 case "bks":
