@@ -35,11 +35,11 @@ public class LoadingScreenTextManager : MonoBehaviour
                 break;
 
             case 4:
-                m_text.text += "Hitch Types and Load Hazards";
+                m_text.text += "Lift Types and Load Hazards";
                 break;
 
             case 5:
-                m_text.text += "Pre Lift - Rig to Boat";
+                m_text.text += "Rig Load Pickups";
                 break;
 
             case 6:

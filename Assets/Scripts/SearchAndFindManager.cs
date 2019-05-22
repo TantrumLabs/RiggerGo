@@ -21,7 +21,8 @@ public class SearchAndFindManager : MonoBehaviour
                 continue;
 
             highLight.gameObject.SetActive(true);
-            ScoreKeeper.instance.AppendHazard(go);
+            var scoreKeeper = FindObjectOfType<ScoreKeeper>();
+            scoreKeeper.AppendHazard(go);
         }
     }
 

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    private static ScoreKeeper _instance;
-    public static ScoreKeeper instance{
-        get{
-            if(_instance == null)
-                _instance = FindObjectOfType<ScoreKeeper>();
-            return _instance;
-        }
-    }
+    // private static ScoreKeeper _instance;
+    // public static ScoreKeeper instance{
+    //     get{
+    //         if(_instance == null)
+    //             _instance = FindObjectOfType<ScoreKeeper>();
+    //         return _instance;
+    //     }
+    // }
 
     public ForceTeleport m_forceTeleport;
     public TMPro.TextMeshProUGUI m_resultsScreen;
@@ -19,6 +19,11 @@ public class ScoreKeeper : MonoBehaviour
     private QuestionHazardData data = new QuestionHazardData();
 
     public LockerManager m_lockerManager;
+
+    public TransitionDataHolder m_dataHolder;
+
+    public DelayEventOnStart m_wrongVoiceOver;
+    public AudioSource m_audioSource;
 
     public int Score{
         get{ return data.m_score;}
@@ -33,6 +38,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         onScored += PacketRecieve;
 
+        m_subscriptions.Subscribe("newslingactive", TableShutUp);
         m_subscriptions.Subscribe("incrementcurrentscore", onScored);
     }
 
@@ -48,6 +54,7 @@ public class ScoreKeeper : MonoBehaviour
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
         data.m_questionCount++;
+        m_wrongVoiceOver.BeginCountdown();
     }
 
     public void AppendHazard(GameObject hazard){
@@ -111,8 +118,8 @@ public class ScoreKeeper : MonoBehaviour
 
     public void SetText(){
         string result = "";
-        var inst = TransitionDataHolder.instance;
-        result += "Congrats " + inst.m_firstName + " " + inst.m_lastName + "!\n";
+        var inst = m_dataHolder;
+        result += "Congratulations  " + inst.m_firstName + " " + inst.m_lastName + "!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
         result += "You missed " + data.m_questionCount + " questions and " + data.m_hazardCount +
             " hazards.";
@@ -123,6 +130,9 @@ public class ScoreKeeper : MonoBehaviour
     public void GetQuestionAndGivenAnswer(GameObject go){
         var question = go.transform.Find("Text Field").Find("Text")
             .GetComponent<TMPro.TextMeshProUGUI>().text;
+
+        // "Mmmm Not quite" voice over
+        m_wrongVoiceOver.BeginCountdown();
 
         string answerGiven = "";
         foreach(Transform t in go.transform){
@@ -151,7 +161,7 @@ public class ScoreKeeper : MonoBehaviour
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
-        SaveLocally.SaveScoreData(data, TransitionDataHolder.instance.m_emailData);
+        SaveLocally.SaveScoreData(data, m_dataHolder.m_emailData);
     }
 
     [ContextMenu("Load Data")]
@@ -161,6 +171,13 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     public void CallSceneEnd(string name){
-        TransitionDataHolder.instance.GoToScene(name);
+        m_dataHolder.GoToScene(name);
+    }
+
+    public void TableShutUp(object[] obj){
+        if(obj[0] != null)
+        {
+            m_audioSource.Stop();
+        }
     }
 }
