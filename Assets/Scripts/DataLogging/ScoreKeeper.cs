@@ -23,6 +23,7 @@ public class ScoreKeeper : MonoBehaviour
     public TransitionDataHolder m_dataHolder;
 
     public DelayEventOnStart m_wrongVoiceOver;
+    public DelayEventOnStart m_rightVoiceOver;
     public AudioSource m_audioSource;
 
     public int Score{
@@ -47,8 +48,11 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     public void AddToScore(int addition){
-        if(addition > 0)
+        if(addition > 0){
             data.m_score += addition;
+            if(m_forceTeleport.currentPoint == 3)
+                m_rightVoiceOver.BeginCountdown();
+        }
     }
 
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
