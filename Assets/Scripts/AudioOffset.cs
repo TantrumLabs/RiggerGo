@@ -35,6 +35,6 @@ public class AudioOffset : MonoBehaviour
 
     public void TurnOffItems(){
         foreach(MonoBehaviour c in m_turnOff)
-            c.enabled = false;
+            Destroy(c);
     }
 }

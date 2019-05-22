@@ -121,6 +121,8 @@ public class ScoreKeeper : MonoBehaviour
         var inst = m_dataHolder;
         result += "Congratulations  " + inst.m_firstName + " " + inst.m_lastName + "!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
+        if(m_lockerManager.scoreValue != m_lockerManager.m_lockerItems.Count)
+            result += "At the locker, you missed " + (m_lockerManager.m_lockerItems.Count - m_lockerManager.scoreValue) + " items.\n";
         result += "You missed " + data.m_questionCount + " questions and " + data.m_hazardCount +
             " hazards.";
 
