@@ -34,4 +34,8 @@ public class SlingManager : MonoBehaviour
             m_currentSling = objArray[0] as SlingBehaviors;
         }
     }
+
+    private void OnDestroy() {
+        m_subscriptions.UnsubscribeAll();
+    }
 }
