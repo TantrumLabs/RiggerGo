@@ -23,6 +23,7 @@ public class VRKeyboardInput : MonoBehaviour
     }
 
     private UnityEngine.UI.InputField m_inputField;
+    private DelayEventOnStart m_delayEventOnStart;
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions =
         new Mouledoux.Components.Mediator.Subscriptions();
     private Mouledoux.Callback.Callback AppendText;
@@ -32,6 +33,7 @@ public class VRKeyboardInput : MonoBehaviour
     {
         keyboardID = m_keyboardID;
         m_inputField = GetComponent<UnityEngine.UI.InputField>();
+        m_delayEventOnStart = GetComponent<DelayEventOnStart>();
     }
 
     void Update()
@@ -86,5 +88,38 @@ public class VRKeyboardInput : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriptions.UnsubscribeAll();
+    }
+
+    public void CheckEmailStructure(UnityEngine.UI.InputField otherInput){
+        bool stop = true;
+
+
+        foreach(char c in m_inputField.text)
+        {
+            if(c == '@'){
+                stop = false;
+                break;
+            }
+        }
+        
+        if(stop)
+            return;
+
+        if(otherInput.text == null)
+            return;
+
+
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("loginTry", 
+            new object[]{m_inputField.text, otherInput.text, m_delayEventOnStart});
+    }
+
+    public void CheckToSeeEmpty(UnityEngine.UI.InputField otherInput){
+        bool contains = false;
+
+        if(m_inputField.text != "" && otherInput.text != "")
+            contains = true;
+        
+        if(contains)
+            m_delayEventOnStart.m_action.Invoke();
     }
 }

@@ -25,10 +25,15 @@ public class ScoreKeeper : MonoBehaviour
     public DelayEventOnStart m_wrongVoiceOver;
     public DelayEventOnStart m_rightVoiceOver;
     public AudioSource m_audioSource;
+    public float m_passingGrade;
 
     public int Score{
         get{ return data.m_score;}
     }
+
+    public float Percentage{get{ return data.m_score / data.m_maxScore;}}
+
+    public QuestionHazardData Data => data;
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
