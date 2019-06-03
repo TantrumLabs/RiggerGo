@@ -44,8 +44,8 @@ public class MironDB_TestManager : MonoBehaviour
 
     void Start()
     {
-        finishTest += FinishTest;
-        subscriptions.Subscribe("endtest", finishTest);
+        // finishTest += FinishTest;
+        // subscriptions.Subscribe("endtest", finishTest);
         subscriptions.Subscribe("loginTry", StartLogin);
         
     }
@@ -54,7 +54,7 @@ public class MironDB_TestManager : MonoBehaviour
     {
         if(!passed) return;
 
-        var data = (QuestionHazardData)obj[0];
+        var data = m_scoreKeeper.Data;
 
         passed = false;
         testComplete = true;
@@ -89,7 +89,10 @@ public class MironDB_TestManager : MonoBehaviour
         yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
 
         if(MironDB.MironDB_Manager.statusReturn.status == "ok")
-            action.m_action.Invoke();
+            {
+                action.m_action.Invoke();
+                MironDB.MironDB_Manager.StartTest(testScenarioID);
+            }
 
         else{
             Debug.Log("Could not login!");
@@ -126,8 +129,10 @@ public class MironDB_TestManager : MonoBehaviour
     }
 
     public void AssesScores(){
-        if(m_scoreKeeper.Percentage < m_scoreKeeper.m_passingGrade)
+        if(m_scoreKeeper.Percentage < m_scoreKeeper.m_passingGrade){
+            Debug.Log("Test was failed");
             FailTest(new object[]{});
+        }
 
         FinishTest(new object[]{});
     }
