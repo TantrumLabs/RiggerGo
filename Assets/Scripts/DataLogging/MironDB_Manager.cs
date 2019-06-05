@@ -41,7 +41,7 @@ namespace MironDB
 			instance.StartCoroutine(instance.LoginRoutine(dbURI, email, password, output));
 		}
 
-		public static void Register(string email, string password, string firstName, string lastName, UnityEngine.UI.Text output)
+		public static void Register(string email, string password, string firstName, string lastName, string output)
 		{
 			instance.StartCoroutine(instance.RegisterRoutine(dbURI, email, password, firstName, lastName, output));
 		}
@@ -125,8 +125,9 @@ namespace MironDB
 
 		// Register
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- 
-		IEnumerator RegisterRoutine(string uri, string email, string password, string firstName, string lastName, UnityEngine.UI.Text output)
+		IEnumerator RegisterRoutine(string uri, string email, string password, string firstName, string lastName, string output)
 		{
+			m_operating = true;
 			uri += "/post/user/register";
 
 			WWWForm form = new WWWForm();
@@ -140,7 +141,8 @@ namespace MironDB
 			yield return www.SendWebRequest();
 
 			DebugResults(www);
-			output.text = $"{statusReturn.status}: {statusReturn.error_description}";
+			output = $"{statusReturn.status}: {statusReturn.error_description}";
+			m_operating = false;
 		}
 
 

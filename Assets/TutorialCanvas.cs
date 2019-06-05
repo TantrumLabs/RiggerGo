@@ -16,6 +16,7 @@ public class TutorialCanvas : MonoBehaviour
 
     public float m_onTriggerStart, m_onTriggerOffset, m_offTriggerStart, m_offTriggerOffset, m_onHoverStart, m_onHoverOffset, m_completeStart, m_completeOffset;
 
+    
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
     private Mouledoux.Callback.Callback onTrigger, offTrigger, onHover, offHover, onRelease;
 

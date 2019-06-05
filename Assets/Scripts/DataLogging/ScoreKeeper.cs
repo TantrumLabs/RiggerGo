@@ -55,6 +55,7 @@ public class ScoreKeeper : MonoBehaviour
     public void AddToScore(int addition){
         if(addition > 0){
             data.m_score += addition;
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, "Correct! Zone "+ m_forceTeleport.currentPoint);
             if(m_forceTeleport.currentPoint == 3)
                 m_rightVoiceOver.BeginCountdown();
         }
@@ -63,12 +64,15 @@ public class ScoreKeeper : MonoBehaviour
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
         data.m_questionCount++;
+        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
+
         m_wrongVoiceOver.BeginCountdown();
     }
 
     public void AppendHazard(GameObject hazard){
         data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
         data.m_hazardCount++;
+        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Hazard! Zone "+ m_forceTeleport.currentPoint);
     }
 
     public string ReturnResults(){
@@ -123,6 +127,7 @@ public class ScoreKeeper : MonoBehaviour
         var packet = obj[0] as Mouledoux.Callback.Packet;
 
         AddToScore((int)packet.floats[0]);
+        
     }
 
     public void SetText(){

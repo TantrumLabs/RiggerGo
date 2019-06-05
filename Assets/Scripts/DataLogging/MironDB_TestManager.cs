@@ -136,4 +136,8 @@ public class MironDB_TestManager : MonoBehaviour
 
         FinishTest(new object[]{});
     }
+
+    public void UpdateTest(DataBase.DBCodeAtlas atlasCode, string notes){
+        MironDB.MironDB_Manager.UpdateTest(testScenarioID, (int)atlasCode, notes);
+    }
 }
