@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 
 public class TextReplacerScript : MonoBehaviour
 {
-    private List<string> bannedWords = new List<string>(){"riggers", "rigger", "Rigger", " rigger "};
-    private List<string> replacmentWords = new List<string>(){"banksmen", "banksman", "Banksman", " banksman "};
+    private List<string> bannedWords = new List<string>(){" riggers ", " Rigger ", " rigger "};
+    private List<string> replacmentWords = new List<string>(){" banksmen ", " Banksman ", " banksman "};
 
     void Awake()
     {
