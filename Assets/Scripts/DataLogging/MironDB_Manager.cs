@@ -75,15 +75,15 @@ namespace MironDB
 			int difID = 1;
 
 			instance.StartCoroutine(instance.UpdateTestRoutine(dbURI,
-				moduleID, testStatus.testid, difID, eventCode, 1, notes));
+				moduleID, testStatus.sessionid, difID, eventCode, 1, notes));
 		}
 
 		public static void FinishTest()
 		{
 			if(testStatus == null) return;
 
-			int testID = testStatus.testid;
-			instance.StartCoroutine(instance.FinishTestRoutine(dbURI, testID));
+			int sessionid = testStatus.sessionid;
+			instance.StartCoroutine(instance.FinishTestRoutine(dbURI, sessionid));
 		}
 
 #region Coroutines
@@ -290,13 +290,13 @@ namespace MironDB
 		
 		// Update test
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-		IEnumerator UpdateTestRoutine(string uri, int moduleID, int testID, int difID, int eventCode, int examID, string notes)
+		IEnumerator UpdateTestRoutine(string uri, int moduleID, int sessionid, int difID, int eventCode, int examID, string notes)
 		{
 			uri += "/post/general/updatetest";
 
 			WWWForm form = new WWWForm();
 			form.AddField("moduleid", moduleID); 	// scenario index
-			form.AddField("testid", testID);		// DB only
+			form.AddField("sessionid", sessionid);		// DB only
 			form.AddField("difid", difID);			// diff
 			form.AddField("event", eventCode);		// special events
 			form.AddField("examid", examID);		// list of modules
@@ -312,12 +312,12 @@ namespace MironDB
 
 		// Finish test
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-		IEnumerator FinishTestRoutine(string uri, int testID)
+		IEnumerator FinishTestRoutine(string uri, int sessionid)
 		{
 			uri += "/post/general/finishtest";
 
 			WWWForm form = new WWWForm();
-			form.AddField("testid", testID);
+			form.AddField("sessionid", sessionid);
 
 			UnityEngine.Networking.UnityWebRequest www =
 				UnityEngine.Networking.UnityWebRequest.Post(uri, form);
@@ -392,7 +392,7 @@ namespace MironDB
 		public sealed class TestStatus
 		{
 			public string status;
-			public int testid;
+			public int sessionid;
 		}
 	}
 }

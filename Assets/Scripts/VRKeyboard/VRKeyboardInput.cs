@@ -141,6 +141,10 @@ public class VRKeyboardInput : MonoBehaviour
         StartCoroutine(CheckRegerstration(board));
     }
 
+    public void StartLogin(TMPro.TextMeshProUGUI board){
+        StartCoroutine(CheckLogin(board));
+    }
+
     private IEnumerator CheckRegerstration(TMPro.TextMeshProUGUI board){
         if(email.Length < 1 || password.Length < 1 || name.Length < 1 || last.Length < 1){
             if(!email.Contains("@") || email.Length < 2)
@@ -171,6 +175,35 @@ public class VRKeyboardInput : MonoBehaviour
         
         if(MironDB.MironDB_Manager.statusReturn.status == "ok")
             board.text = "Registration Complete! Go Login!";
+
+        else{
+            board.text = "Error:\n" + MironDB.MironDB_Manager.statusReturn.error_description;
+        }
+    }
+
+    private IEnumerator CheckLogin(TMPro.TextMeshProUGUI board){
+        if(email.Length < 1 || password.Length < 1){
+            if(!email.Contains("@") || email.Length < 2)
+            {
+                board.text = "Invalid Email!";
+            }
+
+            else if(password.Length < 1){
+                board.text = "Fill in a password!";
+            }
+
+            yield break;
+        }
+
+        MironDB.MironDB_Manager.Login(email, password, null);
+
+        yield return new WaitForEndOfFrame();
+        yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
+
+        if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
+            board.text = "Registration Complete! Go Login!";
+            m_delayEventOnStart.m_action.Invoke();
+        }
 
         else{
             board.text = "Error:\n" + MironDB.MironDB_Manager.statusReturn.error_description;

@@ -12,6 +12,8 @@ public class AudioOffset : MonoBehaviour
     public List<MonoBehaviour> m_turnOff;
     public List<AudioClip> UKAudioClip;
 
+    private bool m_isPlaying;
+
     private int m_index = -1;
 
     void Start(){
@@ -50,6 +52,10 @@ public class AudioOffset : MonoBehaviour
     {
         if(m_UKVersion && !m_ignoreRegion)
         {
+            if(m_isPlaying){
+                StopAllCoroutines();
+                m_isPlaying = false;
+            }
             StartCoroutine(PlayVoiceOversOneAtATime());
         }
 
@@ -71,6 +77,8 @@ public class AudioOffset : MonoBehaviour
     }
 
     public IEnumerator PlayVoiceOversOneAtATime(){
+        m_isPlaying = true;
+        
         foreach(AudioClip ac in UKAudioClip){
             m_audioSource.clip = ac;
             m_audioSource.Stop();
@@ -79,6 +87,8 @@ public class AudioOffset : MonoBehaviour
             yield return new WaitForEndOfFrame();
             yield return new WaitUntil(() => m_audioSource.isPlaying == false);
         }
+
+        m_isPlaying = false;
     }
 
     private void OnDisable() {
