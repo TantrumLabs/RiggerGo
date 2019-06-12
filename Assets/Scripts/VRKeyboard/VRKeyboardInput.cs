@@ -201,8 +201,8 @@ public class VRKeyboardInput : MonoBehaviour
         yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
 
         if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
-            board.text = "Registration Complete! Go Login!";
             m_delayEventOnStart.m_action.Invoke();
+            MironDB.MironDB_Manager.StartTest(MironDB_TestManager.instance.testScenarioID);
         }
 
         else{

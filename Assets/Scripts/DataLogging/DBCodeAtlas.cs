@@ -5,6 +5,7 @@ using UnityEngine;
 namespace DataBase
 {
     public enum DBCodeAtlas{
+        INIT,
         WRONG,
         RIGHT,
     }

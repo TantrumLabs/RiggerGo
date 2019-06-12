@@ -73,6 +73,8 @@ public class LoadingScreenTextManager : MonoBehaviour
             default:
                 break;
         }
+
+        gameObject.GetComponent<TextReplacerScript>().CheckText();
     }
 
     

@@ -100,4 +100,13 @@ public class AudioOffset : MonoBehaviour
         StopCoroutine(PlayVoiceOversOneAtATime());
         m_audioSource.Stop();
     }
+
+    public void StopVoiceOver(){
+        if(m_isPlaying){
+                StopAllCoroutines();
+                m_isPlaying = false;
+        }
+
+        m_audioSource.Stop();
+    }
 }

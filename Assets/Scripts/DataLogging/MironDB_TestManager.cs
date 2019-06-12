@@ -15,6 +15,8 @@ public class MironDB_TestManager : MonoBehaviour
     [SerializeField]
     bool isInstance = false;
 
+    private bool done = false;
+
     private static MironDB_TestManager _instance;
     public static MironDB_TestManager instance
     {
@@ -121,11 +123,16 @@ public class MironDB_TestManager : MonoBehaviour
                 m_scoreKeeper.Data.m_questionsMissed + " " + m_scoreKeeper.Data.m_hazardsMissed);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForEndOfFrame();
 
         MironDB.MironDB_Manager.FinishTest();
         subscriptions.UnsubscribeAll();
-        Destroy(gameObject);
+        //Destroy(gameObject);
+
+        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
+
+        done = true;
     }
 
     public void AssesScores(){
@@ -139,5 +146,16 @@ public class MironDB_TestManager : MonoBehaviour
 
     public void UpdateTest(DataBase.DBCodeAtlas atlasCode, string notes){
         MironDB.MironDB_Manager.UpdateTest(testScenarioID, (int)atlasCode, notes);
+    }
+
+    private bool WantsDone(){
+        if(done)
+            return true;
+        return false;
+    }
+
+    private void OnDestroy(){
+        FinishTest(new object[]{});
+        MironDB.MironDB_Manager.Logout();
     }
 }

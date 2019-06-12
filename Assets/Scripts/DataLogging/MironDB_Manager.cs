@@ -298,9 +298,9 @@ namespace MironDB
 			form.AddField("moduleid", moduleID); 	// scenario index
 			form.AddField("sessionid", sessionid);		// DB only
 			form.AddField("difid", difID);			// diff
-			form.AddField("event", eventCode);		// special events
+			form.AddField("code", eventCode);		// special events
 			form.AddField("examid", examID);		// list of modules
-			form.AddField("note", notes);			// notes
+			form.AddField("codeDescription", notes);			// notes
 
 			UnityEngine.Networking.UnityWebRequest www =
 				UnityEngine.Networking.UnityWebRequest.Post(uri, form);
@@ -314,6 +314,7 @@ namespace MironDB
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
 		IEnumerator FinishTestRoutine(string uri, int sessionid)
 		{
+			m_operating = true;
 			uri += "/post/general/finishtest";
 
 			WWWForm form = new WWWForm();
@@ -325,6 +326,7 @@ namespace MironDB
 
 			DebugResults(www);
 			testStatus = null;
+			m_operating = false;
 		}
 #endregion
 

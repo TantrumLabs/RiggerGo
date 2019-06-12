@@ -13,6 +13,7 @@ public class ScoreKeeper : MonoBehaviour
     //     }
     // }
 
+    public bool m_demo = false;
     public ForceTeleport m_forceTeleport;
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
@@ -55,16 +56,18 @@ public class ScoreKeeper : MonoBehaviour
     public void AddToScore(int addition){
         if(addition > 0){
             data.m_score += addition;
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, "Correct! Zone "+ m_forceTeleport.currentPoint);
-            if(m_forceTeleport.currentPoint == 3)
-                m_rightVoiceOver.BeginCountdown();
+
+            if(!m_demo)
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, "Correct! Zone "+ m_forceTeleport.currentPoint);
+            m_rightVoiceOver.BeginCountdown();
         }
     }
 
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
         data.m_questionCount++;
-        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
 
         m_wrongVoiceOver.BeginCountdown();
     }
@@ -72,7 +75,8 @@ public class ScoreKeeper : MonoBehaviour
     public void AppendHazard(GameObject hazard){
         data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
         data.m_hazardCount++;
-        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Hazard! Zone "+ m_forceTeleport.currentPoint);
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Hazard! Zone "+ m_forceTeleport.currentPoint);
     }
 
     public string ReturnResults(){
@@ -109,6 +113,9 @@ public class ScoreKeeper : MonoBehaviour
             foreach(GameObject go in saf.m_hazards)
                 data.m_maxScore++;
         }
+
+        if(lockerManager == null)
+            return;
 
         //Locker
         foreach(GameObject go in lockerManager.m_lockerItems){
@@ -168,6 +175,9 @@ public class ScoreKeeper : MonoBehaviour
             answerGiven = answerSplit[0];
         else
             answerGiven = answerSplit[1];
+
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
 
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
         data.m_questionCount++;
