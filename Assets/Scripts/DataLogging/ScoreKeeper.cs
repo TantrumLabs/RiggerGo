@@ -221,19 +221,20 @@ public class ScoreKeeper : MonoBehaviour
             question += s + " ";
         }
 
-        var answerSplit = answerGiven.Split(' ');
-        if(answerSplit[1] == null)
-            answerGiven = answerSplit[0];
-        else
-            answerGiven = answerSplit[1];
+        if(answerGiven != "")
+        {
+            var answerSplit = answerGiven.Split(' ');
+            if(answerSplit[1] == null)
+                answerGiven = answerSplit[0];
+            else
+                answerGiven = answerSplit[1];
+        }
 
         var correctAnswerSplit = correctAnswer.Split(' ');
         if(correctAnswerSplit[1] == null)
             correctAnswer = correctAnswerSplit[0];
         else
             correctAnswer = correctAnswerSplit[1];
-
-
 
 
         if(!m_demo)
