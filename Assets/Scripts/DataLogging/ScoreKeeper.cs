@@ -149,44 +149,75 @@ public class ScoreKeeper : MonoBehaviour
         m_resultsScreen.text = result;
     }
 
-    public void GetQuestionAndGivenAnswer(GameObject go){
+
+
+
+
+
+    public void GetQuestionAndGivenAnswer(GameObject go)
+    {
         var question = go.transform.Find("Text Field").Find("Text")
             .GetComponent<TMPro.TextMeshProUGUI>().text;
 
-        // "Mmmm Not quite" voice over
-        m_wrongVoiceOver.BeginCountdown();
 
         string answerGiven = "";
         string correctAnswer = "";
-        foreach(Transform t in go.transform){
-            if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong "))){
+        Transform tTransform = null;
+
+        foreach(Transform t in go.transform)
+        {
+            if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong ")))
+            {
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-                if(text != null){
+                if(text != null)
+                {
                     answerGiven = text.text;
                 }
 
-                else{
-                    answerGiven = t.name;
+                else
+                {
+                    var split = t.name.Split(';');
+                    answerGiven = split[1];
                 }
                 
             }
 
-            else if(t.gameObject.activeSelf && (t.name.Contains("Correct") || t.name.Contains("Correct "))){
+            else if(t.gameObject.activeSelf && (t.name.Contains("Correct") || t.name.Contains("Correct ")))
+            {
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-                if(text != null){
+                if(text != null)
+                {
                     correctAnswer = text.text;
                 }
 
-                else{
-                    correctAnswer = t.name;
+                else
+                {
+                    var split = t.name.Split(';');
+                    correctAnswer = split[1];
                 }
+
+                tTransform = t;
             }
         }
+
+        if(answerGiven != "")
+        {
+            m_wrongVoiceOver.BeginCountdown();
+        }
+
+        else
+        {
+            AddToScore(1);
+        }
+
+
+
 
         var questionSplit = question.Split('\n');
 
         question = "";
-        foreach(string s in questionSplit){
+        foreach(string s in questionSplit)
+        {
             question += s + " ";
         }
 
@@ -202,14 +233,26 @@ public class ScoreKeeper : MonoBehaviour
         else
             correctAnswer = correctAnswerSplit[1];
 
-        if(!m_demo){
-            string message = $"{question.Trim()}: Incorrect-- Answer given: {answerGiven.Trim()}/ Expected answer: {correctAnswer.Trim()}";
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+
+
+
+        if(!m_demo)
+        {
+            bool passed = answerGiven == "";
+            string message = $"{question.Trim()}: {(passed ? "Correct" : "Incorrect" )}-- " +
+                        $"Answer given: {(passed ? correctAnswer.Trim() : answerGiven.Trim())}/ " +
+                        $"Expected answer: {correctAnswer.Trim()}";
+            MironDB_TestManager.instance.UpdateTest(passed ? DataBase.DBCodeAtlas.RIGHT : DataBase.DBCodeAtlas.WRONG, message);
         }
 
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
         data.m_questionCount++;
     }
+
+
+
+
+
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
