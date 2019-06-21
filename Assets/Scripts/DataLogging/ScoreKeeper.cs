@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    private static ScoreKeeper _instance;
-    public static ScoreKeeper instance{
-        get{
-            if(_instance == null)
-                _instance = FindObjectOfType<ScoreKeeper>();
-            return _instance;
-        }
-    }
+    // private static ScoreKeeper _instance;
+    // public static ScoreKeeper instance{
+    //     get{
+    //         if(_instance == null)
+    //             _instance = FindObjectOfType<ScoreKeeper>();
+    //         return _instance;
+    //     }
+    // }
 
+    public bool m_demo = false;
     public ForceTeleport m_forceTeleport;
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
@@ -20,9 +21,20 @@ public class ScoreKeeper : MonoBehaviour
 
     public LockerManager m_lockerManager;
 
+    public TransitionDataHolder m_dataHolder;
+
+    public DelayEventOnStart m_wrongVoiceOver;
+    public DelayEventOnStart m_rightVoiceOver;
+    public AudioSource m_audioSource;
+    public float m_passingGrade;
+
     public int Score{
         get{ return data.m_score;}
     }
+
+    public float Percentage{get{ return data.m_score / data.m_maxScore;}}
+
+    public QuestionHazardData Data => data;
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
@@ -33,6 +45,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         onScored += PacketRecieve;
 
+        m_subscriptions.Subscribe("newslingactive", TableShutUp);
         m_subscriptions.Subscribe("incrementcurrentscore", onScored);
     }
 
@@ -41,18 +54,29 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     public void AddToScore(int addition){
-        if(addition > 0)
+        if(addition > 0){
             data.m_score += addition;
+
+            if(!m_demo)
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"Correct! Zone  {m_forceTeleport.currentPoint}");
+            m_rightVoiceOver.BeginCountdown();
+        }
     }
 
     public void AppendQuestion(TMPro.TextMeshProUGUI text){
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
         data.m_questionCount++;
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Question! Zone  {m_forceTeleport.currentPoint}");
+
+        m_wrongVoiceOver.BeginCountdown();
     }
 
     public void AppendHazard(GameObject hazard){
         data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
         data.m_hazardCount++;
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Hazard! Zone {m_forceTeleport.currentPoint}");
     }
 
     public string ReturnResults(){
@@ -90,6 +114,9 @@ public class ScoreKeeper : MonoBehaviour
                 data.m_maxScore++;
         }
 
+        if(lockerManager == null)
+            return;
+
         //Locker
         foreach(GameObject go in lockerManager.m_lockerItems){
             if(!go.GetComponent<HazardObject>())
@@ -107,15 +134,16 @@ public class ScoreKeeper : MonoBehaviour
         var packet = obj[0] as Mouledoux.Callback.Packet;
 
         AddToScore((int)packet.floats[0]);
+        
     }
 
     public void SetText(){
         string result = "";
-        var inst = TransitionDataHolder.instance;
-        result += "Congrats " + inst.m_firstName + " " + inst.m_lastName + "!\n";
+        var inst = m_dataHolder;
+        result += "Congratulations  " + MironDB.MironDB_Manager.currentUser.name + "!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
-        result += "You missed " + data.m_questionCount + " questions and " + data.m_hazardCount +
-            " hazards.";
+        result += "You missed " + data.m_questionCount + " question(s) and " + data.m_hazardCount +
+            " hazard(s).";
 
         m_resultsScreen.text = result;
     }
@@ -123,6 +151,9 @@ public class ScoreKeeper : MonoBehaviour
     public void GetQuestionAndGivenAnswer(GameObject go){
         var question = go.transform.Find("Text Field").Find("Text")
             .GetComponent<TMPro.TextMeshProUGUI>().text;
+
+        // "Mmmm Not quite" voice over
+        m_wrongVoiceOver.BeginCountdown();
 
         string answerGiven = "";
         foreach(Transform t in go.transform){
@@ -145,13 +176,16 @@ public class ScoreKeeper : MonoBehaviour
         else
             answerGiven = answerSplit[1];
 
+        if(!m_demo)
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
+
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
         data.m_questionCount++;
     }
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
-        SaveLocally.SaveScoreData(data, TransitionDataHolder.instance.m_emailData);
+        SaveLocally.SaveScoreData(data, m_dataHolder.m_emailData);
     }
 
     [ContextMenu("Load Data")]
@@ -161,6 +195,13 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     public void CallSceneEnd(string name){
-        TransitionDataHolder.instance.GoToScene(name);
+        m_dataHolder.GoToScene(name);
+    }
+
+    public void TableShutUp(object[] obj){
+        if(obj[0] != null)
+        {
+            m_audioSource.Stop();
+        }
     }
 }

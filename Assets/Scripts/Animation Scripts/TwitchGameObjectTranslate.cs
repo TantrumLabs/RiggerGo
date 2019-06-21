@@ -31,8 +31,6 @@ public class TwitchGameObjectTranslate : MonoBehaviour
         
         switch(m_moveOn){
             case MoveAxis.X:
-
-            
                 if(m_increasing == true && transform.localPosition.x >= origin.x + m_twitchFactor)
                     m_increasing = false;
                 else if(m_increasing == false && transform.localPosition.x <= origin.x - m_twitchFactor)

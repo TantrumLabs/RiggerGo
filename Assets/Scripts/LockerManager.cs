@@ -10,6 +10,10 @@ public class LockerManager : MonoBehaviour
 
     private float m_scoreValue;
 
+    public float scoreValue{
+        get{return m_scoreValue;}
+    }
+
     public void AddToScore(HazardObject hazard){
         m_scoreValue += hazard.m_scoreValue;
     }

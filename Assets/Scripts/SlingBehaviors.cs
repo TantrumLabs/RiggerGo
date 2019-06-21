@@ -49,9 +49,12 @@ public class SlingBehaviors : MonoBehaviour
     }
 
     public void PickHighlight(bool pass){
-        if(pass)
+        if(pass == true){
             m_rightHighlight.SetActive(true);
-        else
+            return;
+        }
+            
+        else if(pass == false)
         {
             m_wrongHighlight.SetActive(true);
         }

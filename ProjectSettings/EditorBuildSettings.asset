@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/TESTING.unity
     guid: 88b652588994cab44b98d7dc825dc73a
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/MainMenu.unity
     guid: 672e8157901f8da44b1ebc9c0e162f4b
+  - enabled: 1
+    path: Assets/_Scenes/CompanyLogin.unity
+    guid: 6427d72647a98fc4d9ec234963b867e1
   - enabled: 1
     path: Assets/_Scenes/main_test.unity
     guid: 0633c8eb352f4b5439f2d036ecfaeaee

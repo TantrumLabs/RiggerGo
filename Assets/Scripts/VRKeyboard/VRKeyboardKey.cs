@@ -173,4 +173,9 @@ public class VRKeyboardKey : InteractableObject
     private void OffHighlight(){
         m_offHighnight.Invoke();
     }
+
+    [ContextMenu("Press Key")]
+    private void PressKeyInspector(){
+        PressKey();
+    }
 }

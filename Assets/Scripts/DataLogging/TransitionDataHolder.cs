@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class TransitionDataHolder : MonoBehaviour
 {
-    private static TransitionDataHolder _instance;
-    public static TransitionDataHolder instance{
-        get{
-            if(_instance == null)
-                _instance = FindObjectOfType<TransitionDataHolder>();
-            return _instance;
-        }
-    }
+    // private static TransitionDataHolder _instance;
+    // public static TransitionDataHolder instance{
+    //     get{
+    //         if(_instance == null)
+    //             _instance = FindObjectOfType<TransitionDataHolder>();
+    //         return _instance;
+    //     }
+    // }
 
     public string m_emailData, m_firstName, m_lastName;
 
@@ -23,7 +23,6 @@ public class TransitionDataHolder : MonoBehaviour
     private Mouledoux.Callback.Callback onSetText, onSetFirstName, onSetLastName;
 
     void Awake(){
-        DontDestroyOnLoad(gameObject);
 
         onSetText = SetEmail;
         onSetFirstName = SetFirstName;
@@ -31,7 +30,7 @@ public class TransitionDataHolder : MonoBehaviour
 
         m_subscriptions.Subscribe("getemail", onSetText);
         m_subscriptions.Subscribe("sendfirstname", onSetFirstName);
-        m_subscriptions.Subscribe("sendlasrname", onSetLastName);
+        m_subscriptions.Subscribe("sendlastname", onSetLastName);
     }
 
     public void SetEmail(object[] obj){
@@ -39,7 +38,7 @@ public class TransitionDataHolder : MonoBehaviour
             return;
 
         var t = obj[0] as Text;
-        instance.m_emailData = t.text; 
+        m_emailData = t.text; 
     }
 
     public void SetFirstName(object[] obj){
@@ -47,7 +46,7 @@ public class TransitionDataHolder : MonoBehaviour
             return;
 
         var t = obj[0] as Text;
-        instance.m_firstName = t.text; 
+        m_firstName = t.text; 
     }
 
     public void SetLastName(object[] obj){
@@ -55,7 +54,7 @@ public class TransitionDataHolder : MonoBehaviour
             return;
 
         var t = obj[0] as Text;
-        instance.m_lastName = t.text; 
+        m_lastName = t.text; 
     }
 
     public void GoToScene(int i){
