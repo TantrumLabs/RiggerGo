@@ -10,6 +10,8 @@ public class SearchAndFindManager : MonoBehaviour
 
     [ContextMenu("Highlight Missed Hazards")]
     public void HighlightHazards(){
+        List<string> hazardNames = new List<string>();
+
         foreach(GameObject go in m_hazards){
             var goodOn = go.transform.Find("Good").gameObject;
             if(goodOn != null && goodOn.activeSelf == true)
@@ -21,9 +23,11 @@ public class SearchAndFindManager : MonoBehaviour
                 continue;
 
             highLight.gameObject.SetActive(true);
-            var scoreKeeper = FindObjectOfType<ScoreKeeper>();
-            scoreKeeper.AppendHazard(go);
+            hazardNames.Add(go.name);
         }
+
+        var scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        scoreKeeper.AppendHazard(hazardNames, m_hazards.Count);
     }
 
     [ContextMenu("Check Empty")]
