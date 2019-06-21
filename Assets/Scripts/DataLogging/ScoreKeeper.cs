@@ -58,19 +58,20 @@ public class ScoreKeeper : MonoBehaviour
             data.m_score += addition;
 
             if(!m_demo)
-                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"Correct! Zone  {m_forceTeleport.currentPoint}");
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"");
             m_rightVoiceOver.BeginCountdown();
         }
     }
 
-    public void AppendQuestion(TMPro.TextMeshProUGUI text){
-        data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
-        data.m_questionCount++;
-        if(!m_demo)
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Question! Zone  {m_forceTeleport.currentPoint}");
+    // Depricated!    
+    // public void AppendQuestion(TMPro.TextMeshProUGUI text){
+    //     data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
+    //     data.m_questionCount++;
+    //     if(!m_demo)
+    //         MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Question! Zone  {m_forceTeleport.currentPoint}");
 
-        m_wrongVoiceOver.BeginCountdown();
-    }
+    //     m_wrongVoiceOver.BeginCountdown();
+    // }
 
     public void AppendHazard(GameObject hazard){
         data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
@@ -156,10 +157,29 @@ public class ScoreKeeper : MonoBehaviour
         m_wrongVoiceOver.BeginCountdown();
 
         string answerGiven = "";
+        string correctAnswer = "";
         foreach(Transform t in go.transform){
             if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong "))){
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-                answerGiven = text.text;
+                if(text != null){
+                    answerGiven = text.text;
+                }
+
+                else{
+                    answerGiven = t.name;
+                }
+                
+            }
+
+            else if(t.gameObject.activeSelf && (t.name.Contains("Correct") || t.name.Contains("Correct "))){
+                TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+                if(text != null){
+                    correctAnswer = text.text;
+                }
+
+                else{
+                    correctAnswer = t.name;
+                }
             }
         }
 
@@ -176,8 +196,16 @@ public class ScoreKeeper : MonoBehaviour
         else
             answerGiven = answerSplit[1];
 
-        if(!m_demo)
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
+        var correctAnswerSplit = correctAnswer.Split(' ');
+        if(correctAnswerSplit[1] == null)
+            correctAnswer = correctAnswerSplit[0];
+        else
+            correctAnswer = correctAnswerSplit[1];
+
+        if(!m_demo){
+            string message = $"{question.Trim()}: Incorrect-- Answer given: {answerGiven.Trim()}/ Expected answer: {correctAnswer.Trim()}";
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+        }
 
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
         data.m_questionCount++;
