@@ -94,6 +94,7 @@ public class MironDB_TestManager : MonoBehaviour
             {
                 action.m_action.Invoke();
                 MironDB.MironDB_Manager.StartTest(testScenarioID);
+                MironDB.MironDB_Manager.GetuserInformation();
             }
 
         else{

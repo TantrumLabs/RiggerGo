@@ -8,6 +8,7 @@ namespace MironDB
 	{
 		[SerializeField]
 		public static string dbURI = "https://tantrum.raxxar.com/api";
+		public static string companyCode;
 		
 		private static MironDB_Manager _instance;
 		public static MironDB_Manager instance
@@ -65,7 +66,7 @@ namespace MironDB
 		
 		public static void StartTest(int moduleID)
 		{
-			instance.StartCoroutine(instance.StartTestRoutine(dbURI, moduleID));
+			instance.StartCoroutine(instance.StartTestRoutine(dbURI, moduleID, companyCode));
 		}
 
 		public static void UpdateTest(int moduleID, int eventCode, string notes)
@@ -272,12 +273,13 @@ namespace MironDB
 		
 		// Start test
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-		IEnumerator StartTestRoutine(string uri, int moduleID)
+		IEnumerator StartTestRoutine(string uri, int moduleID, string machineID)
 		{
 			uri += "/post/general/starttest";
 
 			WWWForm form = new WWWForm();
 			form.AddField("moduleid", moduleID);
+			form.AddField("machineKey", machineID);
 
 			UnityEngine.Networking.UnityWebRequest www =
 				UnityEngine.Networking.UnityWebRequest.Post(uri, form);

@@ -58,7 +58,7 @@ public class ScoreKeeper : MonoBehaviour
             data.m_score += addition;
 
             if(!m_demo)
-                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, "Correct! Zone "+ m_forceTeleport.currentPoint);
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"Correct! Zone  {m_forceTeleport.currentPoint}");
             m_rightVoiceOver.BeginCountdown();
         }
     }
@@ -67,7 +67,7 @@ public class ScoreKeeper : MonoBehaviour
         data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + text.text + ",";
         data.m_questionCount++;
         if(!m_demo)
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Question! Zone "+ m_forceTeleport.currentPoint);
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Question! Zone  {m_forceTeleport.currentPoint}");
 
         m_wrongVoiceOver.BeginCountdown();
     }
@@ -76,7 +76,7 @@ public class ScoreKeeper : MonoBehaviour
         data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
         data.m_hazardCount++;
         if(!m_demo)
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, "Wrong Hazard! Zone "+ m_forceTeleport.currentPoint);
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Hazard! Zone {m_forceTeleport.currentPoint}");
     }
 
     public string ReturnResults(){
@@ -140,7 +140,7 @@ public class ScoreKeeper : MonoBehaviour
     public void SetText(){
         string result = "";
         var inst = m_dataHolder;
-        result += "Congratulations  " + inst.m_firstName + " " + inst.m_lastName + "!\n";
+        result += "Congratulations  " + MironDB.MironDB_Manager.currentUser.name + "!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
         result += "You missed " + data.m_questionCount + " question(s) and " + data.m_hazardCount +
             " hazard(s).";
