@@ -73,11 +73,30 @@ public class ScoreKeeper : MonoBehaviour
     //     m_wrongVoiceOver.BeginCountdown();
     // }
 
-    public void AppendHazard(GameObject hazard){
-        data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + hazard.name + ",";
-        data.m_hazardCount++;
-        if(!m_demo)
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, $"Wrong Hazard! Zone {m_forceTeleport.currentPoint}");
+    public void AppendHazard(List<string> names, int hazardCount){
+        foreach(string s in names){
+            data.m_hazardsMissed += "Z" + m_forceTeleport.currentPoint + " " + s + ",";
+            data.m_hazardCount++;
+        }
+
+        if(!m_demo){
+            string message = $"Hazard Area {m_forceTeleport.currentPoint - 4}-- ";
+
+            if(names.Count > 0){
+                message += $"Missed {names.Count}/{hazardCount}: ";
+                foreach(string s in names){
+                    message += (names[names.Count - 1] == s) ? s : s +", ";
+                }
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+            }
+
+            else{
+                message += "All hazards found.";
+                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message);
+            }
+
+        }
+            
     }
 
     public string ReturnResults(){
@@ -223,14 +242,14 @@ public class ScoreKeeper : MonoBehaviour
 
         if(answerGiven != "")
         {
-            var answerSplit = answerGiven.Split(' ');
+            var answerSplit = answerGiven.Split('.');
             if(answerSplit[1] == null)
                 answerGiven = answerSplit[0];
             else
                 answerGiven = answerSplit[1];
         }
 
-        var correctAnswerSplit = correctAnswer.Split(' ');
+        var correctAnswerSplit = correctAnswer.Split('.');
         if(correctAnswerSplit[1] == null)
             correctAnswer = correctAnswerSplit[0];
         else
