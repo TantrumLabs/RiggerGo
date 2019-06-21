@@ -240,7 +240,7 @@ public class ScoreKeeper : MonoBehaviour
         if(!m_demo)
         {
             bool passed = answerGiven == "";
-            string message = $"{question.Trim()}: {(passed ? "Correct" : "Incorrect" )}-- " +
+            string message = $"{(passed ? "Correct" : "Incorrect" )}-- {question.Trim()}: " +
                         $"Answer given: {(passed ? correctAnswer.Trim() : answerGiven.Trim())}/ " +
                         $"Expected answer: {correctAnswer.Trim()}";
             MironDB_TestManager.instance.UpdateTest(passed ? DataBase.DBCodeAtlas.RIGHT : DataBase.DBCodeAtlas.WRONG, message);
