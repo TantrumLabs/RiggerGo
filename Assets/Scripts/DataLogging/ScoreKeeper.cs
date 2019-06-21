@@ -57,8 +57,8 @@ public class ScoreKeeper : MonoBehaviour
         if(addition > 0){
             data.m_score += addition;
 
-            if(!m_demo)
-                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"");
+            // if(!m_demo)
+            //     MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, $"");
             m_rightVoiceOver.BeginCountdown();
         }
     }
