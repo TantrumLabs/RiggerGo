@@ -43,6 +43,8 @@ public class SearchAndFindManager : MonoBehaviour
             }
         }
 
+        var scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        scoreKeeper.AppendHazard(new List<string>(), m_hazards.Count);
         m_onEmpty.Invoke();
     }
 

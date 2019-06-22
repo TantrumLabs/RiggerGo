@@ -120,8 +120,8 @@ public class MironDB_TestManager : MonoBehaviour
 
         else if(passed)
         {
-            MironDB.MironDB_Manager.UpdateTest(testScenarioID, 2, 
-                m_scoreKeeper.Data.m_questionsMissed + " " + m_scoreKeeper.Data.m_hazardsMissed);
+            // MironDB.MironDB_Manager.UpdateTest(testScenarioID, 2, 
+            //     m_scoreKeeper.Data.m_questionsMissed + " " + m_scoreKeeper.Data.m_hazardsMissed);
         }
 
         yield return new WaitForEndOfFrame();
