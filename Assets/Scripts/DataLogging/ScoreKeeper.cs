@@ -166,12 +166,12 @@ public class ScoreKeeper : MonoBehaviour
             " hazard(s).";
 
         m_resultsScreen.text = result;
+
+        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- {MironDB.MironDB_Manager.currentUser.name} missed {data.m_questionCount} question(s) and {data.m_hazardCount} hazard(s).";
+        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+
+        MironDB_TestManager.instance.FinishTest(new object[]{});
     }
-
-
-
-
-
 
     public void GetQuestionAndGivenAnswer(GameObject go)
     {
@@ -185,7 +185,7 @@ public class ScoreKeeper : MonoBehaviour
 
         foreach(Transform t in go.transform)
         {
-            if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong ")))
+            if(t.gameObject.activeSelf && (t.name.Contains("Wrong") || t.name.Contains(" Wrong ") || t.name.Contains("Wrong;")))
             {
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
                 if(text != null)
@@ -201,7 +201,7 @@ public class ScoreKeeper : MonoBehaviour
                 
             }
 
-            else if(t.gameObject.activeSelf && (t.name.Contains("Correct") || t.name.Contains("Correct ")))
+            else if(t.gameObject.activeSelf && (t.name.Contains("Correct") || t.name.Contains("Correct ") || t.name.Contains("Correct;")))
             {
                 TMPro.TextMeshProUGUI text = t.GetComponentInChildren<TMPro.TextMeshProUGUI>();
                 if(text != null)
@@ -228,9 +228,6 @@ public class ScoreKeeper : MonoBehaviour
         {
             AddToScore(1);
         }
-
-
-
 
         var questionSplit = question.Split('\n');
 

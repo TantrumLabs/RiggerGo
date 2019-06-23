@@ -57,9 +57,19 @@ public class LockerManager : MonoBehaviour
             var hazardObject = go.GetComponent<HazardObject>();
 
             if(lockerItem.turnOn == false && hazardObject.m_scoreValue > 0){
-                //result += go.name+", ";
+                result += go.name+", ";
                 TurnOnChild(go, "Highlight");
             }
+        }
+        
+        string message = $"These Items were not selected: {result}";
+        if(correctScore - wrongScore >= 0.3f){
+            
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $": Score{correctScore-wrongScore}/ 6.");
+        }
+
+        else{
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $": Score{correctScore-wrongScore}/ 6.");
         }
 
         result += "Correct: " + correctScore + "/6";

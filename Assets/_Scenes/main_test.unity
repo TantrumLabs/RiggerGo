@@ -7739,8 +7739,8 @@ MonoBehaviour:
   m_action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 638555744}
-        m_MethodName: AssesScores
+      - m_Target: {fileID: 148608206}
+        m_MethodName: SetText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25558,7 +25558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea7b3cab03be70439b9392ba5a21e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testScenarioID: 2001
+  testScenarioID: 2002
   m_scoreKeeper: {fileID: 148608206}
   testComplete: 0
   passed: 1
@@ -28760,17 +28760,17 @@ PrefabInstance:
     - target: {fileID: 3300814830809864064, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_Name
-      value: Wrong;Has Glasses
+      value: Wrong; Has Glasses
       objectReference: {fileID: 0}
     - target: {fileID: 9119308262532597379, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_Name
-      value: Wrong;Has Gloves
+      value: Wrong; Has Gloves
       objectReference: {fileID: 0}
     - target: {fileID: 9091706821561196852, guid: 463d6048d9c9b624f804063d3e87a6e3,
         type: 3}
       propertyPath: m_Name
-      value: Correct;Missing Everything
+      value: Correct; Missing Everything
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 463d6048d9c9b624f804063d3e87a6e3, type: 3}
@@ -53882,17 +53882,17 @@ PrefabInstance:
     - target: {fileID: 3300814830809864064, guid: 4f55277e77f4f8f43b26bd21a49df401,
         type: 3}
       propertyPath: m_Name
-      value: Wrong;Missing Gloves
+      value: Wrong; Missing Gloves
       objectReference: {fileID: 0}
     - target: {fileID: 9119308262532597379, guid: 4f55277e77f4f8f43b26bd21a49df401,
         type: 3}
       propertyPath: m_Name
-      value: Wrong;Earmuffs Missing
+      value: Wrong; Earmuffs Missing
       objectReference: {fileID: 0}
     - target: {fileID: 9091706821561196852, guid: 4f55277e77f4f8f43b26bd21a49df401,
         type: 3}
       propertyPath: m_Name
-      value: Correct;Wearing Everything
+      value: Correct; Wearing Everything
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f55277e77f4f8f43b26bd21a49df401, type: 3}
