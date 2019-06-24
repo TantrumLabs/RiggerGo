@@ -160,14 +160,14 @@ public class ScoreKeeper : MonoBehaviour
     public void SetText(){
         string result = "";
         var inst = m_dataHolder;
-        result += "Congratulations  " + MironDB.MironDB_Manager.currentUser.name + "!\n";
+        result += $"Congratulations!\n";
         result += "Your score is: " + data.m_score + "/" + data.m_maxScore + "\n";
         result += "You missed " + data.m_questionCount + " question(s) and " + data.m_hazardCount +
             " hazard(s).";
 
         m_resultsScreen.text = result;
 
-        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- {MironDB.MironDB_Manager.currentUser.name} missed {data.m_questionCount} question(s) and {data.m_hazardCount} hazard(s).";
+        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_questionCount} question(s) and {data.m_hazardCount} hazard(s).";
         MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
 
         MironDB_TestManager.instance.FinishTest(new object[]{});
@@ -196,7 +196,7 @@ public class ScoreKeeper : MonoBehaviour
                 else
                 {
                     var split = t.name.Split(';');
-                    answerGiven = split[1];
+                    answerGiven = split[1].Trim();
                 }
                 
             }
@@ -212,7 +212,7 @@ public class ScoreKeeper : MonoBehaviour
                 else
                 {
                     var split = t.name.Split(';');
-                    correctAnswer = split[1];
+                    correctAnswer = split[1].Trim();
                 }
 
                 tTransform = t;
@@ -240,14 +240,14 @@ public class ScoreKeeper : MonoBehaviour
         if(answerGiven != "")
         {
             var answerSplit = answerGiven.Split('.');
-            if(answerSplit[1] == null)
+            if(answerSplit.Length <= 1)
                 answerGiven = answerSplit[0];
             else
                 answerGiven = answerSplit[1];
         }
 
         var correctAnswerSplit = correctAnswer.Split('.');
-        if(correctAnswerSplit[1] == null)
+        if(correctAnswerSplit.Length <= 1)
             correctAnswer = correctAnswerSplit[0];
         else
             correctAnswer = correctAnswerSplit[1];

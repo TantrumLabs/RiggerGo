@@ -65,11 +65,11 @@ public class LockerManager : MonoBehaviour
         string message = $"These Items were not selected: {result}";
         if(correctScore - wrongScore >= 0.3f){
             
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $": Score{correctScore-wrongScore}/ 6.");
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $": Correct PPE selected:{correctScore}/ 6. Wrong PPE selected:{wrongScore}/3");
         }
 
         else{
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $": Score{correctScore-wrongScore}/ 6.");
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $": Correct PPE selected:{correctScore}/ 6. Wrong PPE selected:{wrongScore}/3");
         }
 
         result += "Correct: " + correctScore + "/6";
