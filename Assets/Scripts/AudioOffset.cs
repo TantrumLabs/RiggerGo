@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioOffset : MonoBehaviour
 {
-    public static bool m_UKVersion = true;
+    public static bool m_UKVersion = false;
 
     public bool m_ignoreRegion = false;
     public AudioSource m_audioSource;

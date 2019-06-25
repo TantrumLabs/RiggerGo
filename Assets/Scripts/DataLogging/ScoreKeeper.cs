@@ -222,6 +222,8 @@ public class ScoreKeeper : MonoBehaviour
         if(answerGiven != "")
         {
             m_wrongVoiceOver.BeginCountdown();
+            data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
+            data.m_questionCount++;
         }
 
         else
@@ -261,15 +263,7 @@ public class ScoreKeeper : MonoBehaviour
                         $"Expected answer: {correctAnswer.Trim()}";
             MironDB_TestManager.instance.UpdateTest(passed ? DataBase.DBCodeAtlas.RIGHT : DataBase.DBCodeAtlas.WRONG, message);
         }
-
-        data.m_questionsMissed += "Z" + m_forceTeleport.currentPoint + " " + question + "Answer Given: " + answerGiven + "\n";
-        data.m_questionCount++;
     }
-
-
-
-
-
 
     [ContextMenu("Save Data")]
     public void SaveScore(){
