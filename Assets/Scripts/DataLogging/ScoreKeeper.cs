@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class ScoreKeeper : MonoBehaviour
     //     }
     // }
 
-    public bool m_demo = false;
+    public static bool m_demo = false;
     public ForceTeleport m_forceTeleport;
     public TMPro.TextMeshProUGUI m_resultsScreen;
 
@@ -43,6 +44,10 @@ public class ScoreKeeper : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if(SceneManager.GetActiveScene().name == "main_Demo"){
+            m_demo = true;
+        }
+
         onScored += PacketRecieve;
 
         m_subscriptions.Subscribe("newslingactive", TableShutUp);

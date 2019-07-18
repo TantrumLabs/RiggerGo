@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SearchAndFindManager : MonoBehaviour
 {
@@ -44,7 +45,9 @@ public class SearchAndFindManager : MonoBehaviour
         }
 
         var scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        scoreKeeper.AppendHazard(new List<string>(), m_hazards.Count);
+        if(!ScoreKeeper.m_demo){
+            scoreKeeper.AppendHazard(new List<string>(), m_hazards.Count);
+        }
         m_onEmpty.Invoke();
     }
 

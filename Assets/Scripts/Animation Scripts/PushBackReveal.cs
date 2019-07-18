@@ -16,6 +16,10 @@ public class PushBackReveal : MonoBehaviour
         m_forceTeleport.m_revealTime = m_newValue;
     }
 
+    public void ChangeValue(float f){
+        m_newValue = f;
+    }
+
     public void PushBack(){
         m_forceTeleport.m_revealTime = m_newValue;
     }
