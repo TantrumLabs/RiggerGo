@@ -14,6 +14,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
     private float m_timeOut;
 
+    private Transform m_blip;
+
     static bool hasTriggered = false;
 
     private bool m_controllerConnected
@@ -26,6 +28,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         m_remote = GetComponent<OVRTrackedRemote>();
         m_lineRenderer = GetComponent<LineRenderer>();
+        m_blip = GameObject.CreatePrimitive(PrimitiveType.Sphere).transform;
+        RestBlip();
     }
 
 
@@ -34,6 +38,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (m_controllerConnected)
         {
+
             if(CheckInput())
             {
                 Mouledoux.Components.Mediator.instance.NotifySubscribers("lasertriggeron");
@@ -80,6 +85,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 {
                     Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
 
+                    RestBlip();
+
                     Mouledoux.Components.Mediator.instance.NotifySubscribers
                         (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
                 }
@@ -88,6 +95,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
                 
                 Mouledoux.Components.Mediator.instance.NotifySubscribers("onhighlight");
+
+                SetBlip(m_raycast.point, (m_raycast.point - transform.position).magnitude);
 
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->onhighlight");
@@ -100,6 +109,8 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         else if (m_targetObject != null)
         {
             Mouledoux.Components.Mediator.instance.NotifySubscribers("offhighlight");
+            
+            RestBlip();
 
             Mouledoux.Components.Mediator.instance.NotifySubscribers
                 (m_targetObject.GetInstanceID().ToString() + "->offhighlight");
@@ -194,6 +205,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
 
         m_lineRenderer.enabled = m_controllerConnected && extraCondition;
         m_lineRenderer.SetPositions( new Vector3[] {m_remote.transform.position, m_endLinePos});
+        // RaycastHit blipRaycast;
+        // Physics.Raycast(m_remote.transform.position, m_remote.transform.forward, out blipRaycast);
+        // SetBlip(blipRaycast.point, (m_raycast.point - transform.position).magnitude);
     }
 
 
@@ -270,5 +284,16 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     public void OnDestroy()
     {
         hasTriggered = false;
+    }
+
+    private void RestBlip(){
+        m_blip.position = Vector3.zero;
+        m_blip.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        m_blip.GetComponent<Collider>().enabled = false;
+    }
+
+    private void SetBlip(Vector3 pos, float scale){
+        m_blip.position = pos;
+        m_blip.localScale = new Vector3(0.01f, 0.01f, 0.01f) * scale;
     }
 }

@@ -21,11 +21,11 @@ public class VRKeyboardKey : InteractableObject
     [SerializeField] private TMPro.TextMeshPro m_shiftText;
 
     [Header("Materials")]
-    [SerializeField] private Material m_normalMat;
-    [SerializeField] private Material m_highlightMat;
-    [SerializeField] private Material m_pressedMat;
-    [SerializeField] private Material m_disabledMat;
-    [SerializeField] private MeshRenderer m_backgroundMesh;
+    [SerializeField] private Sprite m_normalMat;
+    [SerializeField] private Sprite m_highlightMat;
+    [SerializeField] private Sprite m_pressedMat;
+    [SerializeField] private Sprite m_disabledMat;
+    [SerializeField] private SpriteRenderer m_backgroundMesh;
 
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
         new Mouledoux.Components.Mediator.Subscriptions();
@@ -145,9 +145,9 @@ public class VRKeyboardKey : InteractableObject
         return isEnabled;
     }
 
-    private void SetMaterial(Material mat)
+    private void SetMaterial(Sprite mat)
     {
-        m_backgroundMesh.material = mat;
+        m_backgroundMesh.sprite = mat;
     }
     private void ResetMaterial()
     {
