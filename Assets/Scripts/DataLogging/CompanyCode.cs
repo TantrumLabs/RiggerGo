@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CompanyCode : MonoBehaviour
 {
     public float m_speed;
+    public TMPro.TextMeshProUGUI m_errorText;
 
     [SerializeField]
     private Image m_background;
@@ -18,6 +19,8 @@ public class CompanyCode : MonoBehaviour
 
     private float m_opacity = 0;
     private float m_previoustime;
+
+    private HazardObject m_button;
 
     private static CompanyCode s_instance;
     public static CompanyCode instance{
@@ -35,8 +38,7 @@ public class CompanyCode : MonoBehaviour
     }
 
     public void SetCode(UnityEngine.UI.InputField field){
-        MironDB.MironDB_Manager.companyCode = field.text;
-        StartCoroutine(Transition());
+        StartCoroutine(CheckCompanyCode(field));
     }
 
     public IEnumerator Transition(){
@@ -64,5 +66,31 @@ public class CompanyCode : MonoBehaviour
         }
 
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("main_test");
+    }
+
+    private IEnumerator CheckCompanyCode(UnityEngine.UI.InputField key){
+        MironDB.MironDB_Manager.statusReturn = null;
+        
+        MironDB.MironDB_Manager.CheckKey(key.text);
+
+        m_errorText.text = "Validating...";
+
+        yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
+
+        if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
+            MironDB.MironDB_Manager.companyCode = key.text;
+            StartCoroutine(Transition());
+        }
+
+        else{
+            m_button.enabled = true;
+            key.text = "";
+            m_errorText.text = "Error! Invalid Company code!";
+        }
+    }
+
+    public void SetButton(HazardObject ho){
+        m_button = ho;
     }
 }

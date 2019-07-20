@@ -145,6 +145,64 @@ public class VRKeyboardInput : MonoBehaviour
         StartCoroutine(CheckLogin(board));
     }
 
+    private IEnumerator TryLoginRegister(TMPro.TextMeshProUGUI board)
+    {
+        board.text = "";
+
+        if(!email.Contains("@") || email.Length < 2)
+        {
+            board.text = "Invalid Email!";
+            yield break;
+        }
+
+        else if(password.Length < 1){
+            board.text = "Fill in a password!";
+            yield break;
+        }
+
+        MironDB.MironDB_Manager.statusReturn = null;
+        MironDB.MironDB_Manager.Login(email, password, null);
+
+        yield return new WaitForEndOfFrame();
+        yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
+
+        if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
+            m_delayEventOnStart.m_action.Invoke();
+            MironDB.MironDB_Manager.StartTest(MironDB_TestManager.instance.testScenarioID);
+            yield break;
+        }
+
+        else
+        {
+            board.text += " \nInvalid Login. Trying to register...\n";
+            yield return new WaitForSeconds(2f);
+        }
+
+        if(first.Length < 1 || last.Length < 1){
+            board.text += "Please fill in a first & last name!";
+            yield break;
+        }
+
+        else
+        {
+            MironDB.MironDB_Manager.statusReturn = null;
+            MironDB.MironDB_Manager.Register(email, password, first, last, null);
+
+            yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
+            
+            if(MironDB.MironDB_Manager.statusReturn.status == "ok")
+            {
+                StartCoroutine(TryLoginRegister(board));
+                yield break;
+            }
+
+            else
+            {
+                board.text = MironDB.MironDB_Manager.statusReturn.error_description;
+            }
+        }
+    }
+
     private IEnumerator CheckRegerstration(TMPro.TextMeshProUGUI board){
         if(email.Length < 1 || password.Length < 1 || name.Length < 1 || last.Length < 1){
             if(!email.Contains("@") || email.Length < 2)
