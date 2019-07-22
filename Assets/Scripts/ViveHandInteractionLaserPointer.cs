@@ -38,6 +38,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     {
         if (m_controllerConnected)
         {
+            CheckObjectHit();
 
             if(CheckInput())
             {
@@ -47,7 +48,6 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             if (CheckLongInput())   // We are holding down the trigger
             {
                 m_timeOut+= Time.deltaTime;
-                CheckObjectHit();
             }
 
             else if (CheckOffInput() && m_targetObject != null) // We have let go of the trigger, AND have a target object
@@ -70,7 +70,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
             }
         }
 
-        bool[] extraLazerConditions = { CheckLongInput() };
+        bool[] extraLazerConditions = { true };
         UpdateLaser(extraLazerConditions);
     }
 
@@ -102,7 +102,7 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
                 Mouledoux.Components.Mediator.instance.NotifySubscribers
                     (m_targetObject.GetInstanceID().ToString() + "->onhighlight");
             }
-
+            
             m_endLinePos = m_raycast.point;
             return true;
         }
@@ -205,9 +205,9 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
         }
 
         m_lineRenderer.enabled = m_controllerConnected && extraCondition;
-        m_lineRenderer.SetPositions( new Vector3[] {m_remote.transform.position, m_endLinePos});
+        m_lineRenderer.SetPositions( new Vector3[] {m_remote.transform.position, m_remote.transform.position + m_remote.transform.forward});
         
-        if((m_raycast.point - transform.position).magnitude >= 25){
+        if(Vector3.Distance(m_raycast.point, transform.position) >= 25){
             SetBlip(m_endLinePos, 0);
         }
 
@@ -297,11 +297,12 @@ public class ViveHandInteractionLaserPointer : MonoBehaviour
     private void RestBlip(){
         m_blip.localScale = new Vector3(0, 0, 0);
         m_blip.GetComponent<Collider>().enabled = false;
+        m_blip.GetComponent<Renderer>().material = new Material(Shader.Find("Unlit/Color"));
         m_blip.GetComponent<Renderer>().material.color = new Color(0, 0.8f, 0.05f);
     }
 
     private void SetBlip(Vector3 pos, float scale){
         m_blip.position = pos;
-        m_blip.localScale = new Vector3(0.05f, 0.05f, 0.05f) * scale;
+        m_blip.localScale = new Vector3(0.02f, 0.02f, 0.02f) * scale;
     }
 }
