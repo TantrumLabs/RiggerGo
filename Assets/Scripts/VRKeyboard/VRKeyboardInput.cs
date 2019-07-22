@@ -138,7 +138,7 @@ public class VRKeyboardInput : MonoBehaviour
     }
 
     public void StartRegeristry(TMPro.TextMeshProUGUI board){
-        StartCoroutine(CheckRegerstration(board));
+        StartCoroutine(TryLoginRegister(board));
     }
 
     public void StartLogin(TMPro.TextMeshProUGUI board){
@@ -174,7 +174,7 @@ public class VRKeyboardInput : MonoBehaviour
 
         else
         {
-            board.text += " \nInvalid Login. Trying to register...\n";
+            board.text += $" \n{MironDB.MironDB_Manager.statusReturn.error_description}.\n";
             yield return new WaitForSeconds(2f);
         }
 
