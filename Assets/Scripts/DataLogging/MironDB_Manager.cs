@@ -28,6 +28,7 @@ namespace MironDB
 		public static ErrorReturn statusReturn;
 		public static UserProfile currentUser;
 		public static TestStatus testStatus;
+		public static string machineID;
 
 		public static bool m_operating = false;
 
@@ -52,6 +53,11 @@ namespace MironDB
 			instance.StartCoroutine(instance.PasswordResetRoutine(dbURI, email));
 		}
 
+		public static void CheckKey(string key)
+		{
+			instance.StartCoroutine(instance.CheckKeyRoutine(dbURI, key));
+		}
+
 		public static UserProfile GetuserInformation()
 		{
 			instance.StartCoroutine(instance.UserProfileRoutine(dbURI));
@@ -66,17 +72,15 @@ namespace MironDB
 		
 		public static void StartTest(int moduleID)
 		{
-			instance.StartCoroutine(instance.StartTestRoutine(dbURI, moduleID, companyCode));
+			instance.StartCoroutine(instance.StartTestRoutine(dbURI, moduleID));
 		}
 
-		public static void UpdateTest(int moduleID, int eventCode, string notes)
+		public static void UpdateTest(int eventCode, string notes)
 		{
 			if(testStatus == null) return;
 
-			int difID = 1;
-
 			instance.StartCoroutine(instance.UpdateTestRoutine(dbURI,
-				moduleID, testStatus.sessionid, difID, eventCode, 1, notes));
+				testStatus.sessionid, eventCode, notes, 0, 0));
 		}
 
 		public static void FinishTest()
@@ -136,6 +140,7 @@ namespace MironDB
 			form.AddField("password", password);
 			form.AddField("firstname", firstName);
 			form.AddField("lastname", lastName);
+			form.AddField("machineKey", machineID);
 
 			UnityEngine.Networking.UnityWebRequest www =
 				UnityEngine.Networking.UnityWebRequest.Post(uri, form);
@@ -273,7 +278,7 @@ namespace MironDB
 		
 		// Start test
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-		IEnumerator StartTestRoutine(string uri, int moduleID, string machineID)
+		IEnumerator StartTestRoutine(string uri, int moduleID)
 		{
 			uri += "/post/general/starttest";
 
@@ -292,17 +297,16 @@ namespace MironDB
 		
 		// Update test
 		// ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
-		IEnumerator UpdateTestRoutine(string uri, int moduleID, int sessionid, int difID, int eventCode, int examID, string notes)
+		IEnumerator UpdateTestRoutine(string uri, int sessionID, int eventCode, string codeDescription, int startExam = 0, int endExam = 0)
 		{
 			uri += "/post/general/updatetest";
 
 			WWWForm form = new WWWForm();
-			form.AddField("moduleid", moduleID); 	// scenario index
-			form.AddField("sessionid", sessionid);		// DB only
-			form.AddField("difid", difID);			// diff
-			form.AddField("code", eventCode);		// special events
-			form.AddField("examid", examID);		// list of modules
-			form.AddField("codeDescription", notes);			// notes
+			form.AddField("sessionid", sessionID);					// DB only
+			form.AddField("code", eventCode);						// special events
+			form.AddField("codeDescription", codeDescription);		// special events
+			form.AddField("weStart", startExam);
+			form.AddField("weEnd", endExam);
 
 			UnityEngine.Networking.UnityWebRequest www =
 				UnityEngine.Networking.UnityWebRequest.Post(uri, form);
@@ -328,6 +332,22 @@ namespace MironDB
 
 			DebugResults(www);
 			testStatus = null;
+			m_operating = false;
+		}
+
+		IEnumerator CheckKeyRoutine(string uri, string key)
+		{
+			m_operating = true;
+			uri += "/post/general/checkkey";
+
+			WWWForm form = new WWWForm();
+			form.AddField("key", key);
+
+			UnityEngine.Networking.UnityWebRequest www =
+				UnityEngine.Networking.UnityWebRequest.Post(uri, form);
+			yield return www.SendWebRequest();
+
+			DebugResults(www);
 			m_operating = false;
 		}
 #endregion

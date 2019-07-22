@@ -61,7 +61,7 @@ public class MironDB_TestManager : MonoBehaviour
         passed = false;
         testComplete = true;
 
-        MironDB.MironDB_Manager.UpdateTest(testScenarioID, 1, 
+        MironDB.MironDB_Manager.UpdateTest(1, 
             data.m_questionsMissed + " " + data.m_hazardsMissed);
     }
 
@@ -69,7 +69,7 @@ public class MironDB_TestManager : MonoBehaviour
     private void DroppedObjectFail(object[] obj)
     {
         testComplete = true;
-        MironDB.MironDB_Manager.UpdateTest(testScenarioID, 11, "Dropped Object");
+        MironDB.MironDB_Manager.UpdateTest(11, "Dropped Object");
     }
 
     public void StartLogin(object[] obj){
@@ -115,7 +115,7 @@ public class MironDB_TestManager : MonoBehaviour
 
         if(!testComplete)
         {
-            MironDB.MironDB_Manager.UpdateTest(testScenarioID, 0, "DNF");
+            MironDB.MironDB_Manager.UpdateTest(0, "DNF");
         }
 
         else if(passed)
@@ -146,7 +146,7 @@ public class MironDB_TestManager : MonoBehaviour
     }
 
     public void UpdateTest(DataBase.DBCodeAtlas atlasCode, string notes){
-        MironDB.MironDB_Manager.UpdateTest(testScenarioID, (int)atlasCode, notes);
+        MironDB.MironDB_Manager.UpdateTest((int)atlasCode, notes);
     }
 
     private bool WantsDone(){

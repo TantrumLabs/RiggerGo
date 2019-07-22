@@ -62,14 +62,21 @@ public class LockerManager : MonoBehaviour
             }
         }
         
-        string message = $"These Items were not selected: {result}";
-        if(correctScore - wrongScore >= 0.3f){
+        result.Trim();
+        var resultSplit = result.Split(',');
+        result = "";
+        for(int i = 0; i < resultSplit.Length; i++){
+            result += (i == resultSplit.Length - 1)? $"{resultSplit[i]}." : $"{resultSplit[i]}, ";
+        }
+
+        string message = $"PPE Locker-- ";
+        if(correctScore - wrongScore >= 6){
             
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $": Score{correctScore-wrongScore}/ 6.");
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $"All proper PPE was selected.");
         }
 
         else{
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $": Score{correctScore-wrongScore}/ 6.");
+            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $"Correct PPE selected:{correctScore}/ 6. Wrong PPE selected:{wrongScore}/3. This is the PPE the user missed: {result.Trim()}");
         }
 
         result += "Correct: " + correctScore + "/6";
