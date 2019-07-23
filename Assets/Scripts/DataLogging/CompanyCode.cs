@@ -69,9 +69,11 @@ public class CompanyCode : MonoBehaviour
     }
 
     private IEnumerator CheckCompanyCode(UnityEngine.UI.InputField key){
+
+        string comapyID = key.text;
         MironDB.MironDB_Manager.statusReturn = null;
         
-        MironDB.MironDB_Manager.CheckKey(key.text);
+        MironDB.MironDB_Manager.CheckKey(comapyID);
 
         m_errorText.text = "Validating...";
 
@@ -79,7 +81,7 @@ public class CompanyCode : MonoBehaviour
         yield return new WaitUntil(() => MironDB.MironDB_Manager.m_operating == false);
 
         if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
-            MironDB.MironDB_Manager.companyCode = key.text;
+            MironDB.MironDB_Manager.machineID = comapyID;
             StartCoroutine(Transition());
         }
 

@@ -8,7 +8,7 @@ namespace MironDB
 	{
 		[SerializeField]
 		public static string dbURI = "https://tantrum.raxxar.com/api";
-		public static string companyCode;
+		//public static string companyCode;
 		
 		private static MironDB_Manager _instance;
 		public static MironDB_Manager instance

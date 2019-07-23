@@ -90,6 +90,8 @@ public class VRKeyboardInput : MonoBehaviour
     }
 
     public void SendInformation(string s){
+        if(s == null || s == "") return;
+
         Mouledoux.Components.Mediator.instance.NotifySubscribers(s, new object[] {m_inputField.textComponent});
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11153,17 +11153,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 731425053}
           m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 278314199}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -30986,7 +30975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea7b3cab03be70439b9392ba5a21e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testScenarioID: 2002
+  testScenarioID: 2001
   m_scoreKeeper: {fileID: 148608206}
   testComplete: 0
   passed: 1
@@ -67118,8 +67107,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1442267264}
   m_TextComponent: {fileID: 862419910}
   m_Placeholder: {fileID: 1823719747}
-  m_ContentType: 7
-  m_InputType: 2
+  m_ContentType: 0
+  m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
