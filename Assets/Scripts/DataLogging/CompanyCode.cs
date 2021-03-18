@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CompanyCode : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class CompanyCode : MonoBehaviour
             return s_instance;
         }
     }
+
+    public UnityEvent m_afterLoginEvent;
 
     private void Awake() {
         if(instance != this)Destroy(this);
@@ -82,7 +85,7 @@ public class CompanyCode : MonoBehaviour
 
         if(MironDB.MironDB_Manager.statusReturn.status == "ok"){
             MironDB.MironDB_Manager.machineID = comapyID;
-            StartCoroutine(Transition());
+            m_afterLoginEvent.Invoke();
         }
 
         else{
@@ -94,5 +97,10 @@ public class CompanyCode : MonoBehaviour
 
     public void SetButton(HazardObject ho){
         m_button = ho;
+    }
+
+    public void StartTransition()
+    {
+        StartCoroutine(Transition());
     }
 }

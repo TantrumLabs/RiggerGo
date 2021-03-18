@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ForceTeleport : MonoBehaviour
 {
-    public UnityEngine.UI.Image blindfold, m_loadingLogo;
+    public Renderer m_blindfoldRenderer;
+    private Material blindfold;
+    public UnityEngine.UI.Image m_loadingLogo;
     public TMPro.TextMeshProUGUI m_loading, m_areaTeller;
-    public ViveHandInteractionLaserPointer m_lazer;
+    public TantrumInteractionLaserPointerPico m_lazer;
     public float fadeTime, delayTime;
     private Vector3 originalPos;
     private Quaternion originalRot;
@@ -28,6 +30,8 @@ public class ForceTeleport : MonoBehaviour
     {
         if (objectRef == null)
         { objectRef = gameObject; }
+
+        blindfold = m_blindfoldRenderer.material;
 
         objectRef.transform.position = railPoints[currentPoint].position;
         originalPos = objectRef.transform.localPosition;

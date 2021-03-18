@@ -90,4 +90,10 @@ public class InteractableObject : MonoBehaviour
     {
         go.SetActive(!go.activeSelf);
     }
+
+    [ContextMenu("On Interact")]
+    private void InvokeStuff()
+    {
+        m_onInteract.Invoke();
+    }
 }

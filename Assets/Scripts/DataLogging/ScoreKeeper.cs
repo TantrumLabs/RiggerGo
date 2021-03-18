@@ -50,7 +50,7 @@ public class ScoreKeeper : MonoBehaviour
 
         onScored += PacketRecieve;
 
-        m_subscriptions.Subscribe("newslingactive", TableShutUp);
+        //m_subscriptions.Subscribe("newslingactive", TableShutUp);
         m_subscriptions.Subscribe("incrementcurrentscore", onScored);
     }
 
@@ -88,16 +88,16 @@ public class ScoreKeeper : MonoBehaviour
             string message = $"Hazard Area {m_forceTeleport.currentPoint - 4}-- ";
 
             if(names.Count > 0){
-                message += $"Missed {names.Count}/{hazardCount}: ";
+                message += $"Missed:{names.Count}/{hazardCount} //";
                 foreach(string s in names){
                     message += (names[names.Count - 1] == s) ? s : s +", ";
                 }
-                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+                MironDB_TestManager.instance.UpdateTest(7000 + (m_forceTeleport.currentPoint - 4), message);
             }
 
             else{
-                message += "All hazards found.";
-                MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message);
+                message += "Missed: 0";
+                MironDB_TestManager.instance.UpdateTest(7000 + (m_forceTeleport.currentPoint - 4), message);
             }
 
         }
@@ -172,8 +172,8 @@ public class ScoreKeeper : MonoBehaviour
 
         m_resultsScreen.text = result;
 
-        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}-- User missed {data.m_questionCount} question(s) and {data.m_hazardCount} hazard(s).";
-        MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message);
+        string message = $"Test Complete! Final Score: {data.m_score}/{data.m_maxScore}|||Question(s) missed:{data.m_questionCount}|||Hazard(s) missed:{data.m_hazardCount}";
+        MironDB_TestManager.instance.FinalUpdate(message);
 
         MironDB_TestManager.instance.FinishTest(new object[]{});
     }
@@ -263,10 +263,10 @@ public class ScoreKeeper : MonoBehaviour
         if(!m_demo)
         {
             bool passed = answerGiven == "";
-            string message = $"{(passed ? "Correct" : "Incorrect" )}-- {question.Trim()}: " +
-                        $"Answer given: {(passed ? correctAnswer.Trim() : answerGiven.Trim())}/ " +
-                        $"Expected answer: {correctAnswer.Trim()}";
-            MironDB_TestManager.instance.UpdateTest(passed ? DataBase.DBCodeAtlas.RIGHT : DataBase.DBCodeAtlas.WRONG, message);
+            string message = $"{(passed ? "Correct" : "Incorrect" )}:{question.Trim()}|||" +
+                        $"Answer given:{(passed ? correctAnswer.Trim() : answerGiven.Trim())}||| " +
+                        $"Expected answer:{correctAnswer.Trim()}";
+            MironDB_TestManager.instance.UpdateTest(m_forceTeleport.currentPoint + 7000, message);
         }
     }
 

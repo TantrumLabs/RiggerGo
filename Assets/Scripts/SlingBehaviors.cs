@@ -14,10 +14,16 @@ public class SlingBehaviors : MonoBehaviour
 
     private Vector3 m_oldPosition;
     private Quaternion m_oldRotation;
+    private Mouledoux.Components.Mediator.Subscriptions subscriptions = new Mouledoux.Components.Mediator.Subscriptions();
 
     void Awake(){
         m_oldPosition = transform.localPosition;
         m_oldRotation = transform.localRotation;
+    }
+
+    private void Start()
+    {
+        subscriptions.Subscribe("brandnewsling", DeactivateSelf);
     }
 
     public void Activate(){
@@ -28,6 +34,8 @@ public class SlingBehaviors : MonoBehaviour
         gameObject.GetComponent<HazardObject>().enabled = false;
         object[] objarray = {this};
         Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+        Mouledoux.Components.Mediator.instance.NotifySubscribers("brandnewsling", objarray);
+
     }
 
     public void SetBack(){
@@ -45,7 +53,17 @@ public class SlingBehaviors : MonoBehaviour
         m_questionGameObject.SetActive(false);
         gameObject.GetComponent<HazardObject>().enabled = true;
         object[] objarray = {null};
-        Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+        //Mouledoux.Components.Mediator.instance.NotifySubscribers("newslingactive", objarray);
+    }
+
+    private void DeactivateSelf(object[] objArray)
+    {
+        Debug.Log("Deactivating...");
+        var sling = objArray[0] as SlingBehaviors;
+        if (sling != this)
+        {
+            Deactivate();
+        }
     }
 
     public void PickHighlight(bool pass){
@@ -58,5 +76,10 @@ public class SlingBehaviors : MonoBehaviour
         {
             m_wrongHighlight.SetActive(true);
         }
+    }
+
+    private void OnDestroy()
+    {
+        subscriptions.UnsubscribeAll();
     }
 }

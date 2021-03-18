@@ -82,9 +82,8 @@ public class MironDB_TestManager : MonoBehaviour
         DelayEventOnStart action = (DelayEventOnStart)obj[2];
         string email = (string)obj[0];
         string password = (string)obj[1];
-        string output = "";
 
-        MironDB.MironDB_Manager.Login(email, password, output);
+        MironDB.MironDB_Manager.Login(email, password);
 
         yield return new WaitForEndOfFrame();
 
@@ -145,8 +144,13 @@ public class MironDB_TestManager : MonoBehaviour
         FinishTest(new object[]{});
     }
 
-    public void UpdateTest(DataBase.DBCodeAtlas atlasCode, string notes){
-        MironDB.MironDB_Manager.UpdateTest((int)atlasCode, notes);
+    public void UpdateTest(int scenarioID, string notes){
+        MironDB.MironDB_Manager.UpdateTest(2, notes, scenarioID);
+    }
+
+    public void FinalUpdate(string notes)
+    {
+        MironDB.MironDB_Manager.UpdateTest(2, notes, 7013);
     }
 
     private bool WantsDone(){

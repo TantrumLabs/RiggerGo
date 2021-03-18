@@ -12,13 +12,11 @@ public class VRKeyboardKey : InteractableObject
 
     [Space]
     public bool isShifted;
-    public bool isCapsShift;
     public bool isEnabled;
-    public bool notShiftable = false;
 
     [Header("TextMesh")]
-    [SerializeField] private TMPro.TextMeshPro m_mainText;
-    [SerializeField] private TMPro.TextMeshPro m_shiftText;
+    [SerializeField] private TMPro.TextMeshProUGUI m_mainText;
+    [SerializeField] private TMPro.TextMeshProUGUI m_shiftText;
 
     [Header("Materials")]
     [SerializeField] private Sprite m_normalMat;
@@ -27,27 +25,27 @@ public class VRKeyboardKey : InteractableObject
     [SerializeField] private Sprite m_disabledMat;
     [SerializeField] private SpriteRenderer m_backgroundMesh;
 
+    [SerializeField] private AudioSource m_clickNoise;
+    [SerializeField] private AudioSource m_hoverNoise;
+
     private Mouledoux.Components.Mediator.Subscriptions m_subscriptions = 
         new Mouledoux.Components.Mediator.Subscriptions();
 
     private Mouledoux.Callback.Callback onShift, onKeyPress;
+
+    private bool m_alreadySent = false;
 
     public void Initialize(string a_keyboardID, string a_mainString, string a_shiftString = "", bool a_capsShift = true)
     {
         m_keyboardID = a_keyboardID;
         m_mainKey = a_mainString.ToLower();
         //m_shiftKey = a_shiftString == "" ? m_mainKey.ToUpper() : a_shiftString;
-        isCapsShift = a_capsShift;
 
-        m_onHighnight.RemoveAllListeners();
-        m_offHighnight.RemoveAllListeners();
-        m_onInteract.RemoveAllListeners();
-        m_offInteract.RemoveAllListeners();
-
-        m_onHighnight.AddListener(delegate{SetMaterial(m_highlightMat);});
-        m_offHighnight.AddListener(delegate{SetMaterial(m_normalMat);});
-        m_onInteract.AddListener(delegate{  });
-        m_offInteract.AddListener(delegate{PressKey();});
+        m_onHighnight.AddListener(delegate{SetMaterial(m_highlightMat); m_alreadySent = false;
+                                    m_hoverNoise.Play();});
+        m_offHighnight.AddListener(delegate{SetMaterial(m_normalMat); m_alreadySent = false;});
+        m_onInteract.AddListener(delegate{PressKey();});
+        m_offInteract.AddListener(delegate{m_alreadySent = false;});
 
         onShift = null;
         onKeyPress = null;
@@ -70,8 +68,11 @@ public class VRKeyboardKey : InteractableObject
 
     public void PressKey()
     {
-        Mouledoux.Components.Mediator.instance.NotifySubscribers($"vrkeyboard:{m_keyboardID}", new object[] {this});
-
+        if(m_alreadySent == false){
+            Mouledoux.Components.Mediator.instance.NotifySubscribers($"vrkeyboard:{m_keyboardID}", new object[] {this});
+            m_clickNoise.Play();
+            m_alreadySent = true;
+        } 
     }
 
 
@@ -177,5 +178,9 @@ public class VRKeyboardKey : InteractableObject
     [ContextMenu("Press Key")]
     private void PressKeyInspector(){
         PressKey();
+    }
+
+    private void OnDestroy() {
+        m_subscriptions.UnsubscribeAll();
     }
 }

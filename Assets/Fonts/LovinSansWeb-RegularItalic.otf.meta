@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 76038da125fe7d54f8156bbea5aabe80
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Lovin Sans
+  fontNames:
+  - Lovin Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 686a2be7c188c81449bac38dfb29395d, type: 3}
+  - {fileID: 12800000, guid: 2d343a99613a0f54e9b4740e96fce66d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

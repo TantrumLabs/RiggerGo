@@ -26,6 +26,12 @@ public class HazardObject : InteractableObject
         base.offInteract.Invoke(new object[]{});
     }
 
+    [ContextMenu("OnInteract")]
+    private void CallOnInteract()
+    {
+        base.onInteract.Invoke(new object[] { });
+    }
+
     public void IncreaseScore()
     {
         var packet = new Mouledoux.Callback.Packet();

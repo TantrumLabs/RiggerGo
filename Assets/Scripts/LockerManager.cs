@@ -72,11 +72,11 @@ public class LockerManager : MonoBehaviour
         string message = $"PPE Locker-- ";
         if(correctScore - wrongScore >= 6){
             
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.RIGHT, message + $"All proper PPE was selected.");
+            MironDB_TestManager.instance.UpdateTest(7001, message + $"Message:All proper PPE was selected.");
         }
 
         else{
-            MironDB_TestManager.instance.UpdateTest(DataBase.DBCodeAtlas.WRONG, message + $"Correct PPE selected:{correctScore}/ 6. Wrong PPE selected:{wrongScore}/3. This is the PPE the user missed: {result.Trim()}");
+            MironDB_TestManager.instance.UpdateTest(7001, message + $"Correct PPE selected:{correctScore}|||6. Wrong PPE selected:{wrongScore}|||This is the PPE the user missed: {result.Trim()}");
         }
 
         result += "Correct: " + correctScore + "/6";
