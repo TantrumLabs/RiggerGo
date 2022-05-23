@@ -2,18 +2,21 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sea
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
+  m_ValidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses: []
@@ -68,6 +71,7 @@ Material:
         m_Texture: {fileID: 8400000, guid: ebb8e054c33d97349bc86ac6fc782f64, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -101,4 +105,5 @@ Material:
     - _SpecularColor: {r: 0.9411765, g: 0.844577, b: 0.6366782, a: 0.27053705}
     - _WaterColor: {r: 0, g: 0, b: 0, a: 0.5}
     - _WorldLightDir: {r: -0.03, g: -0.201, b: -1, a: 0}
-    - world_light_dir: {r: 0.3213938, g: 0.76604444, b: -0.5566705, a: 0}
+    - world_light_dir: {r: 0.64018285, g: 0.7660435, b: 0.05782406, a: 0}
+  m_BuildTextureStacks: []
